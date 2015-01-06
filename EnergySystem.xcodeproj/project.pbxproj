@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		420113A419AC1E8700A0BF7F /* Idea Stuff 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 420113A319AC1E8700A0BF7F /* Idea Stuff 2.png */; };
 		4201143419ADDCC900A0BF7F /* ESMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4201143319ADDCC900A0BF7F /* ESMainViewController.m */; };
+		425159441A5BC3CD00A0B6D2 /* ESMD5Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 425159431A5BC3CD00A0B6D2 /* ESMD5Util.m */; };
 		4254491D1A149763003DC549 /* ESConfigTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4254491C1A149763003DC549 /* ESConfigTableViewController.m */; };
 		425449201A14B1E6003DC549 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 42753DC519ADFE6A00CA3D44 /* libsqlite3.dylib */; };
 		425449231A159AFE003DC549 /* ESGuideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 425449221A159AFE003DC549 /* ESGuideViewController.m */; };
@@ -38,6 +39,8 @@
 		42753DC619ADFE6A00CA3D44 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 42753DC519ADFE6A00CA3D44 /* libsqlite3.dylib */; };
 		42753DC919AE034200CA3D44 /* ESSqliteUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 42753DC819AE034200CA3D44 /* ESSqliteUtil.m */; };
 		42D21CD71A08B40700D2CB39 /* ESDataManageDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 42D21CD61A08B40700D2CB39 /* ESDataManageDelegate.m */; };
+		42F8EFEB1A5BDD9B008D1F3E /* ESDownLoadFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F8EFEA1A5BDD9B008D1F3E /* ESDownLoadFile.m */; };
+		42F8EFEE1A5BE3BC008D1F3E /* ESUpdateConfigFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F8EFED1A5BE3BC008D1F3E /* ESUpdateConfigFile.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +57,8 @@
 		420113A319AC1E8700A0BF7F /* Idea Stuff 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Idea Stuff 2.png"; sourceTree = "<group>"; };
 		4201143219ADDCC900A0BF7F /* ESMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESMainViewController.h; sourceTree = "<group>"; };
 		4201143319ADDCC900A0BF7F /* ESMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESMainViewController.m; sourceTree = "<group>"; };
+		425159421A5BC3CD00A0B6D2 /* ESMD5Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESMD5Util.h; sourceTree = "<group>"; };
+		425159431A5BC3CD00A0B6D2 /* ESMD5Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESMD5Util.m; sourceTree = "<group>"; };
 		4254491B1A149763003DC549 /* ESConfigTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESConfigTableViewController.h; sourceTree = "<group>"; };
 		4254491C1A149763003DC549 /* ESConfigTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESConfigTableViewController.m; sourceTree = "<group>"; };
 		4254491E1A14B1D7003DC549 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
@@ -101,6 +106,10 @@
 		42D21CD51A08B40700D2CB39 /* ESDataManageDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESDataManageDelegate.h; sourceTree = "<group>"; };
 		42D21CD61A08B40700D2CB39 /* ESDataManageDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESDataManageDelegate.m; sourceTree = "<group>"; };
 		42D21CD81A08B60300D2CB39 /* ESDataManageProtocal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ESDataManageProtocal.h; sourceTree = "<group>"; };
+		42F8EFE91A5BDD9B008D1F3E /* ESDownLoadFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESDownLoadFile.h; sourceTree = "<group>"; };
+		42F8EFEA1A5BDD9B008D1F3E /* ESDownLoadFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESDownLoadFile.m; sourceTree = "<group>"; };
+		42F8EFEC1A5BE3BC008D1F3E /* ESUpdateConfigFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESUpdateConfigFile.h; sourceTree = "<group>"; };
+		42F8EFED1A5BE3BC008D1F3E /* ESUpdateConfigFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESUpdateConfigFile.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -224,6 +233,12 @@
 				42D21CD51A08B40700D2CB39 /* ESDataManageDelegate.h */,
 				42D21CD61A08B40700D2CB39 /* ESDataManageDelegate.m */,
 				42D21CD81A08B60300D2CB39 /* ESDataManageProtocal.h */,
+				425159421A5BC3CD00A0B6D2 /* ESMD5Util.h */,
+				425159431A5BC3CD00A0B6D2 /* ESMD5Util.m */,
+				42F8EFE91A5BDD9B008D1F3E /* ESDownLoadFile.h */,
+				42F8EFEA1A5BDD9B008D1F3E /* ESDownLoadFile.m */,
+				42F8EFEC1A5BE3BC008D1F3E /* ESUpdateConfigFile.h */,
+				42F8EFED1A5BE3BC008D1F3E /* ESUpdateConfigFile.m */,
 			);
 			path = EnergySystem;
 			sourceTree = "<group>";
@@ -364,10 +379,13 @@
 				425449311A1EDC50003DC549 /* ESConfigTabBarViewController.m in Sources */,
 				4261B70919AB242F00A91C86 /* ESLoginViewController.m in Sources */,
 				4261B72C19AB271B00A91C86 /* MBProgressHUD.m in Sources */,
+				42F8EFEB1A5BDD9B008D1F3E /* ESDownLoadFile.m in Sources */,
 				42753DC919AE034200CA3D44 /* ESSqliteUtil.m in Sources */,
+				425159441A5BC3CD00A0B6D2 /* ESMD5Util.m in Sources */,
 				4261B70319AB242F00A91C86 /* ESAppDelegate.m in Sources */,
 				4261B6FF19AB242F00A91C86 /* main.m in Sources */,
 				427116AB19AF5A9600E1A114 /* ESUserConfigInfo.m in Sources */,
+				42F8EFEE1A5BE3BC008D1F3E /* ESUpdateConfigFile.m in Sources */,
 				425449231A159AFE003DC549 /* ESGuideViewController.m in Sources */,
 				42D21CD71A08B40700D2CB39 /* ESDataManageDelegate.m in Sources */,
 				425449281A16FCDC003DC549 /* ESConfigCityViewController.m in Sources */,

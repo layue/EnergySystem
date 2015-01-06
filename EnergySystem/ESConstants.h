@@ -17,7 +17,7 @@
 #endif
 
 #ifndef NETWORKTIMEOUT
-#define NETWORKTIMEOUT 10.0f
+#define NETWORKTIMEOUT 60.0f
 #endif
 
 NSUserDefaults *userInfoSettings;

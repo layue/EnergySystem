@@ -55,31 +55,10 @@
     if ([segue.identifier isEqualToString:@"Configuration Info"]) {
         
         if (self.firstTouchOnConfigButton == 1) {
-            [self getUserConfigInfo];
+            ESUpdateConfigFile *esUpdCfg = [[ESUpdateConfigFile alloc] init];
+            [esUpdCfg getUserConfigInfo];
         }
     }
-
-}
-
-- (void)getUserConfigInfo
-{
-    ESDataManageDelegate *configDelegate = [[ESDataManageDelegate alloc] init];
-    self.delegate = configDelegate;
-    
-    NSMutableData *data = [[NSMutableData alloc] init];
-    [self.delegate getUserConfigInfoDelegate:data];
-    
-    
-    if ([data length] > 0) {
-        
-        //解析JSON格式的数据,存入Sqlite本地数据库
-        NSDictionary *resultData = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
-        [self.delegate storeConfigInfoToDBDelegate:resultData];
-    }
-    
-    [data release];
-    [configDelegate release];
-    self.delegate = nil;
 
 }
 

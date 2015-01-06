@@ -10,7 +10,7 @@
 #import <sqlite3.h>
 
 #import "ESSqliteUtil.h"
-#import "ESDataManageDelegate.h"
+#import "ESUpdateConfigFile.h"
 #import "ESUserConfigInfo.h"
 #import "ESConfigTableViewController.h"
 
