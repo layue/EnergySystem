@@ -7,12 +7,17 @@
 //
 
 #import "ESAppDelegate.h"
+#import "IQKeyboardManager.h"
 
 @implementation ESAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    //使用IQKeyboardManager,解决虚拟键盘遮挡输入框问题
+    [[IQKeyboardManager sharedManager] setEnable:YES];
+    [[IQKeyboardManager sharedManager] setKeyboardDistanceFromTextField:60];
+    
     return YES;
 }
 							

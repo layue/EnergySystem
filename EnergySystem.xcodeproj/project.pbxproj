@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		420113A419AC1E8700A0BF7F /* Idea Stuff 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 420113A319AC1E8700A0BF7F /* Idea Stuff 2.png */; };
+		4201143419ADDCC900A0BF7F /* ESMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4201143319ADDCC900A0BF7F /* ESMainViewController.m */; };
+		4254491D1A149763003DC549 /* ESConfigTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4254491C1A149763003DC549 /* ESConfigTableViewController.m */; };
+		425449201A14B1E6003DC549 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 42753DC519ADFE6A00CA3D44 /* libsqlite3.dylib */; };
+		425449231A159AFE003DC549 /* ESGuideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 425449221A159AFE003DC549 /* ESGuideViewController.m */; };
+		425449281A16FCDC003DC549 /* ESConfigCityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 425449271A16FCDC003DC549 /* ESConfigCityViewController.m */; };
+		4254492B1A173E73003DC549 /* ESConfigCountyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4254492A1A173E73003DC549 /* ESConfigCountyViewController.m */; };
+		4254492E1A174F2A003DC549 /* ESConfigFinalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4254492D1A174F2A003DC549 /* ESConfigFinalViewController.m */; };
+		425449311A1EDC50003DC549 /* ESConfigTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 425449301A1EDC50003DC549 /* ESConfigTabBarViewController.m */; };
+		425449331A1F1DFC003DC549 /* login_page_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 425449321A1F1DFC003DC549 /* login_page_bg.png */; };
 		4261B6F319AB242F00A91C86 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4261B6F219AB242F00A91C86 /* Foundation.framework */; };
 		4261B6F519AB242F00A91C86 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4261B6F419AB242F00A91C86 /* CoreGraphics.framework */; };
 		4261B6F719AB242F00A91C86 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4261B6F619AB242F00A91C86 /* UIKit.framework */; };
@@ -14,13 +24,20 @@
 		4261B6FF19AB242F00A91C86 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4261B6FE19AB242F00A91C86 /* main.m */; };
 		4261B70319AB242F00A91C86 /* ESAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4261B70219AB242F00A91C86 /* ESAppDelegate.m */; };
 		4261B70619AB242F00A91C86 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4261B70419AB242F00A91C86 /* Main.storyboard */; };
-		4261B70919AB242F00A91C86 /* ESViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4261B70819AB242F00A91C86 /* ESViewController.m */; };
+		4261B70919AB242F00A91C86 /* ESLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4261B70819AB242F00A91C86 /* ESLoginViewController.m */; };
 		4261B70B19AB242F00A91C86 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4261B70A19AB242F00A91C86 /* Images.xcassets */; };
 		4261B71219AB242F00A91C86 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4261B71119AB242F00A91C86 /* XCTest.framework */; };
 		4261B71319AB242F00A91C86 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4261B6F219AB242F00A91C86 /* Foundation.framework */; };
 		4261B71419AB242F00A91C86 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4261B6F619AB242F00A91C86 /* UIKit.framework */; };
 		4261B71C19AB242F00A91C86 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4261B71A19AB242F00A91C86 /* InfoPlist.strings */; };
 		4261B71E19AB242F00A91C86 /* EnergySystemTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4261B71D19AB242F00A91C86 /* EnergySystemTests.m */; };
+		4261B72919AB256100A91C86 /* IQKeyboardManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4261B72819AB256100A91C86 /* IQKeyboardManager.m */; };
+		4261B72C19AB271B00A91C86 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 4261B72B19AB271B00A91C86 /* MBProgressHUD.m */; };
+		427116AB19AF5A9600E1A114 /* ESUserConfigInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 427116AA19AF5A9600E1A114 /* ESUserConfigInfo.m */; };
+		42753DC419ADFD3E00CA3D44 /* ESConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 42753DC319ADFD3E00CA3D44 /* ESConstants.m */; };
+		42753DC619ADFE6A00CA3D44 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 42753DC519ADFE6A00CA3D44 /* libsqlite3.dylib */; };
+		42753DC919AE034200CA3D44 /* ESSqliteUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 42753DC819AE034200CA3D44 /* ESSqliteUtil.m */; };
+		42D21CD71A08B40700D2CB39 /* ESDataManageDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 42D21CD61A08B40700D2CB39 /* ESDataManageDelegate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +51,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		420113A319AC1E8700A0BF7F /* Idea Stuff 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Idea Stuff 2.png"; sourceTree = "<group>"; };
+		4201143219ADDCC900A0BF7F /* ESMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESMainViewController.h; sourceTree = "<group>"; };
+		4201143319ADDCC900A0BF7F /* ESMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESMainViewController.m; sourceTree = "<group>"; };
+		4254491B1A149763003DC549 /* ESConfigTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESConfigTableViewController.h; sourceTree = "<group>"; };
+		4254491C1A149763003DC549 /* ESConfigTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESConfigTableViewController.m; sourceTree = "<group>"; };
+		4254491E1A14B1D7003DC549 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+		425449211A159AFE003DC549 /* ESGuideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESGuideViewController.h; sourceTree = "<group>"; };
+		425449221A159AFE003DC549 /* ESGuideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESGuideViewController.m; sourceTree = "<group>"; };
+		425449261A16FCDC003DC549 /* ESConfigCityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESConfigCityViewController.h; sourceTree = "<group>"; };
+		425449271A16FCDC003DC549 /* ESConfigCityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESConfigCityViewController.m; sourceTree = "<group>"; };
+		425449291A173E73003DC549 /* ESConfigCountyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESConfigCountyViewController.h; sourceTree = "<group>"; };
+		4254492A1A173E73003DC549 /* ESConfigCountyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESConfigCountyViewController.m; sourceTree = "<group>"; };
+		4254492C1A174F2A003DC549 /* ESConfigFinalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESConfigFinalViewController.h; sourceTree = "<group>"; };
+		4254492D1A174F2A003DC549 /* ESConfigFinalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESConfigFinalViewController.m; sourceTree = "<group>"; };
+		4254492F1A1EDC4F003DC549 /* ESConfigTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESConfigTabBarViewController.h; sourceTree = "<group>"; };
+		425449301A1EDC50003DC549 /* ESConfigTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESConfigTabBarViewController.m; sourceTree = "<group>"; };
+		425449321A1F1DFC003DC549 /* login_page_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login_page_bg.png; sourceTree = SOURCE_ROOT; };
 		4261B6EF19AB242F00A91C86 /* EnergySystem.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EnergySystem.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4261B6F219AB242F00A91C86 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4261B6F419AB242F00A91C86 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -45,14 +79,28 @@
 		4261B70119AB242F00A91C86 /* ESAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ESAppDelegate.h; sourceTree = "<group>"; };
 		4261B70219AB242F00A91C86 /* ESAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ESAppDelegate.m; sourceTree = "<group>"; };
 		4261B70519AB242F00A91C86 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		4261B70719AB242F00A91C86 /* ESViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ESViewController.h; sourceTree = "<group>"; };
-		4261B70819AB242F00A91C86 /* ESViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ESViewController.m; sourceTree = "<group>"; };
+		4261B70719AB242F00A91C86 /* ESLoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ESLoginViewController.h; sourceTree = "<group>"; };
+		4261B70819AB242F00A91C86 /* ESLoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ESLoginViewController.m; sourceTree = "<group>"; };
 		4261B70A19AB242F00A91C86 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		4261B71019AB242F00A91C86 /* EnergySystemTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EnergySystemTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4261B71119AB242F00A91C86 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		4261B71919AB242F00A91C86 /* EnergySystemTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "EnergySystemTests-Info.plist"; sourceTree = "<group>"; };
 		4261B71B19AB242F00A91C86 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4261B71D19AB242F00A91C86 /* EnergySystemTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EnergySystemTests.m; sourceTree = "<group>"; };
+		4261B72719AB256100A91C86 /* IQKeyboardManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IQKeyboardManager.h; sourceTree = "<group>"; };
+		4261B72819AB256100A91C86 /* IQKeyboardManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IQKeyboardManager.m; sourceTree = "<group>"; };
+		4261B72A19AB271B00A91C86 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		4261B72B19AB271B00A91C86 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		427116A919AF5A9600E1A114 /* ESUserConfigInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESUserConfigInfo.h; sourceTree = "<group>"; };
+		427116AA19AF5A9600E1A114 /* ESUserConfigInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESUserConfigInfo.m; sourceTree = "<group>"; };
+		42753DC219ADFD3E00CA3D44 /* ESConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESConstants.h; sourceTree = "<group>"; };
+		42753DC319ADFD3E00CA3D44 /* ESConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESConstants.m; sourceTree = "<group>"; };
+		42753DC519ADFE6A00CA3D44 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		42753DC719AE034200CA3D44 /* ESSqliteUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESSqliteUtil.h; sourceTree = "<group>"; };
+		42753DC819AE034200CA3D44 /* ESSqliteUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESSqliteUtil.m; sourceTree = "<group>"; };
+		42D21CD51A08B40700D2CB39 /* ESDataManageDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESDataManageDelegate.h; sourceTree = "<group>"; };
+		42D21CD61A08B40700D2CB39 /* ESDataManageDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESDataManageDelegate.m; sourceTree = "<group>"; };
+		42D21CD81A08B60300D2CB39 /* ESDataManageProtocal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ESDataManageProtocal.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +108,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42753DC619ADFE6A00CA3D44 /* libsqlite3.dylib in Frameworks */,
 				4261B6F519AB242F00A91C86 /* CoreGraphics.framework in Frameworks */,
 				4261B6F719AB242F00A91C86 /* UIKit.framework in Frameworks */,
 				4261B6F319AB242F00A91C86 /* Foundation.framework in Frameworks */,
@@ -70,6 +119,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				425449201A14B1E6003DC549 /* libsqlite3.dylib in Frameworks */,
 				4261B71219AB242F00A91C86 /* XCTest.framework in Frameworks */,
 				4261B71419AB242F00A91C86 /* UIKit.framework in Frameworks */,
 				4261B71319AB242F00A91C86 /* Foundation.framework in Frameworks */,
@@ -79,6 +129,51 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		420113A119AC1E4300A0BF7F /* libs */ = {
+			isa = PBXGroup;
+			children = (
+				4261B72819AB256100A91C86 /* IQKeyboardManager.m */,
+				4261B72719AB256100A91C86 /* IQKeyboardManager.h */,
+				4261B72B19AB271B00A91C86 /* MBProgressHUD.m */,
+				4261B72A19AB271B00A91C86 /* MBProgressHUD.h */,
+			);
+			name = libs;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		420113A219AC1E6700A0BF7F /* images */ = {
+			isa = PBXGroup;
+			children = (
+				425449321A1F1DFC003DC549 /* login_page_bg.png */,
+				420113A319AC1E8700A0BF7F /* Idea Stuff 2.png */,
+			);
+			name = images;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		425449251A15D419003DC549 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				4261B70719AB242F00A91C86 /* ESLoginViewController.h */,
+				4261B70819AB242F00A91C86 /* ESLoginViewController.m */,
+				4201143219ADDCC900A0BF7F /* ESMainViewController.h */,
+				4201143319ADDCC900A0BF7F /* ESMainViewController.m */,
+				4254491B1A149763003DC549 /* ESConfigTableViewController.h */,
+				4254491C1A149763003DC549 /* ESConfigTableViewController.m */,
+				425449211A159AFE003DC549 /* ESGuideViewController.h */,
+				425449221A159AFE003DC549 /* ESGuideViewController.m */,
+				425449261A16FCDC003DC549 /* ESConfigCityViewController.h */,
+				425449271A16FCDC003DC549 /* ESConfigCityViewController.m */,
+				425449291A173E73003DC549 /* ESConfigCountyViewController.h */,
+				4254492A1A173E73003DC549 /* ESConfigCountyViewController.m */,
+				4254492C1A174F2A003DC549 /* ESConfigFinalViewController.h */,
+				4254492D1A174F2A003DC549 /* ESConfigFinalViewController.m */,
+				4254492F1A1EDC4F003DC549 /* ESConfigTabBarViewController.h */,
+				425449301A1EDC50003DC549 /* ESConfigTabBarViewController.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
 		4261B6E619AB242F00A91C86 = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +196,8 @@
 		4261B6F119AB242F00A91C86 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4254491E1A14B1D7003DC549 /* libsqlite3.0.dylib */,
+				42753DC519ADFE6A00CA3D44 /* libsqlite3.dylib */,
 				4261B6F219AB242F00A91C86 /* Foundation.framework */,
 				4261B6F419AB242F00A91C86 /* CoreGraphics.framework */,
 				4261B6F619AB242F00A91C86 /* UIKit.framework */,
@@ -112,13 +209,21 @@
 		4261B6F819AB242F00A91C86 /* EnergySystem */ = {
 			isa = PBXGroup;
 			children = (
-				4261B70119AB242F00A91C86 /* ESAppDelegate.h */,
-				4261B70219AB242F00A91C86 /* ESAppDelegate.m */,
+				425449251A15D419003DC549 /* ViewControllers */,
+				420113A219AC1E6700A0BF7F /* images */,
+				420113A119AC1E4300A0BF7F /* libs */,
 				4261B70419AB242F00A91C86 /* Main.storyboard */,
-				4261B70719AB242F00A91C86 /* ESViewController.h */,
-				4261B70819AB242F00A91C86 /* ESViewController.m */,
 				4261B70A19AB242F00A91C86 /* Images.xcassets */,
 				4261B6F919AB242F00A91C86 /* Supporting Files */,
+				42753DC219ADFD3E00CA3D44 /* ESConstants.h */,
+				42753DC319ADFD3E00CA3D44 /* ESConstants.m */,
+				42753DC719AE034200CA3D44 /* ESSqliteUtil.h */,
+				42753DC819AE034200CA3D44 /* ESSqliteUtil.m */,
+				427116A919AF5A9600E1A114 /* ESUserConfigInfo.h */,
+				427116AA19AF5A9600E1A114 /* ESUserConfigInfo.m */,
+				42D21CD51A08B40700D2CB39 /* ESDataManageDelegate.h */,
+				42D21CD61A08B40700D2CB39 /* ESDataManageDelegate.m */,
+				42D21CD81A08B60300D2CB39 /* ESDataManageProtocal.h */,
 			);
 			path = EnergySystem;
 			sourceTree = "<group>";
@@ -126,6 +231,8 @@
 		4261B6F919AB242F00A91C86 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4261B70219AB242F00A91C86 /* ESAppDelegate.m */,
+				4261B70119AB242F00A91C86 /* ESAppDelegate.h */,
 				4261B6FA19AB242F00A91C86 /* EnergySystem-Info.plist */,
 				4261B6FB19AB242F00A91C86 /* InfoPlist.strings */,
 				4261B6FE19AB242F00A91C86 /* main.m */,
@@ -229,7 +336,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				420113A419AC1E8700A0BF7F /* Idea Stuff 2.png in Resources */,
 				4261B70B19AB242F00A91C86 /* Images.xcassets in Resources */,
+				425449331A1F1DFC003DC549 /* login_page_bg.png in Resources */,
 				4261B6FD19AB242F00A91C86 /* InfoPlist.strings in Resources */,
 				4261B70619AB242F00A91C86 /* Main.storyboard in Resources */,
 			);
@@ -250,9 +359,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4261B70919AB242F00A91C86 /* ESViewController.m in Sources */,
+				4261B72919AB256100A91C86 /* IQKeyboardManager.m in Sources */,
+				4254492E1A174F2A003DC549 /* ESConfigFinalViewController.m in Sources */,
+				425449311A1EDC50003DC549 /* ESConfigTabBarViewController.m in Sources */,
+				4261B70919AB242F00A91C86 /* ESLoginViewController.m in Sources */,
+				4261B72C19AB271B00A91C86 /* MBProgressHUD.m in Sources */,
+				42753DC919AE034200CA3D44 /* ESSqliteUtil.m in Sources */,
 				4261B70319AB242F00A91C86 /* ESAppDelegate.m in Sources */,
 				4261B6FF19AB242F00A91C86 /* main.m in Sources */,
+				427116AB19AF5A9600E1A114 /* ESUserConfigInfo.m in Sources */,
+				425449231A159AFE003DC549 /* ESGuideViewController.m in Sources */,
+				42D21CD71A08B40700D2CB39 /* ESDataManageDelegate.m in Sources */,
+				425449281A16FCDC003DC549 /* ESConfigCityViewController.m in Sources */,
+				42753DC419ADFD3E00CA3D44 /* ESConstants.m in Sources */,
+				4254491D1A149763003DC549 /* ESConfigTableViewController.m in Sources */,
+				4254492B1A173E73003DC549 /* ESConfigCountyViewController.m in Sources */,
+				4201143419ADDCC900A0BF7F /* ESMainViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -379,6 +501,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_OBJC_ARC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "EnergySystem/EnergySystem-Prefix.pch";
 				INFOPLIST_FILE = "EnergySystem/EnergySystem-Info.plist";
@@ -392,6 +515,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_OBJC_ARC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "EnergySystem/EnergySystem-Prefix.pch";
 				INFOPLIST_FILE = "EnergySystem/EnergySystem-Info.plist";
@@ -461,6 +585,7 @@
 				4261B72319AB242F00A91C86 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4261B72419AB242F00A91C86 /* Build configuration list for PBXNativeTarget "EnergySystemTests" */ = {
 			isa = XCConfigurationList;
@@ -469,6 +594,7 @@
 				4261B72619AB242F00A91C86 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
