@@ -13,8 +13,9 @@
 #import "ESMD5Util.h"
 
 @interface ESUpdateConfigFile : NSObject
-
-
+{
+    UIAlertView *_alertView;
+}
 - (void) getUserConfigInfo;
 
 @end

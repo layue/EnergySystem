@@ -27,6 +27,7 @@ BOOL firstLogin;
 static NSString *serverHttpUrl = @"http://10.103.241.63:8080/EnergySystem/";
 static NSString *loginAction   = @"Login_UserBasicAction.action?name=";
 static NSString *configAction  = @"Configuration_UserBasicAction.action?companyId=";
+static NSString *configFilePath = @"resource/downloads/";
 
 @interface ESConstants : NSObject
 

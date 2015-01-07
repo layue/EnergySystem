@@ -14,6 +14,7 @@
 {
     ESDataManageDelegate *configDelegate = [[ESDataManageDelegate alloc] init];
     
+   // [self showCheckingAlert];
     NSMutableData *data = [[NSMutableData alloc] init];
     [configDelegate getUserConfigInfoDelegate:data];
     
@@ -26,7 +27,8 @@
         NSString *companyIdNSString = [companyIdNSInt stringValue];
         companyIdNSString = [companyIdNSString stringByAppendingString:@".cfg"];
         
-        NSString *path = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject];
+        NSString *path = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES)
+                          lastObject];
         path = [path stringByAppendingString:@"/"];
         path = [path stringByAppendingString:companyIdNSString];
         
@@ -54,6 +56,15 @@
     [configDelegate release];
 }
 
+- (void) showCheckingAlert
+{
+    _alertView = [[UIAlertView alloc] initWithTitle:@"更新配置文件"
+                                                        message:@"正在检查更新..."
+                                                       delegate:nil
+                                              cancelButtonTitle:nil
+                                              otherButtonTitles:nil,nil];
+    [_alertView show];
+}
 
 
 @end

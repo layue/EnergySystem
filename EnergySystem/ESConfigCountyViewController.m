@@ -97,8 +97,6 @@
             NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
             UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
             ESConfigTabBarViewController *estbvc = (ESConfigTabBarViewController *)segue.destinationViewController;
-            
-            
             estbvc.county = cell.textLabel.text;
         }
     }

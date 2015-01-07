@@ -8,8 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
+#import "ESAlertView.h"
+
 @interface ESDownLoadFile : NSObject
 {
+    ESAlertView *_alertView;
+    UIProgressView *_progressView;
+    UILabel *_progressLabel;
     NSMutableData *_data;
     long long _totalLength;
 }

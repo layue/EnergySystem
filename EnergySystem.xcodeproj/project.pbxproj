@@ -39,6 +39,7 @@
 		42753DC619ADFE6A00CA3D44 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 42753DC519ADFE6A00CA3D44 /* libsqlite3.dylib */; };
 		42753DC919AE034200CA3D44 /* ESSqliteUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 42753DC819AE034200CA3D44 /* ESSqliteUtil.m */; };
 		42D21CD71A08B40700D2CB39 /* ESDataManageDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 42D21CD61A08B40700D2CB39 /* ESDataManageDelegate.m */; };
+		42DCA6201A5D0FF300C0765B /* ESAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 42DCA61F1A5D0FF300C0765B /* ESAlertView.m */; };
 		42F8EFEB1A5BDD9B008D1F3E /* ESDownLoadFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F8EFEA1A5BDD9B008D1F3E /* ESDownLoadFile.m */; };
 		42F8EFEE1A5BE3BC008D1F3E /* ESUpdateConfigFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F8EFED1A5BE3BC008D1F3E /* ESUpdateConfigFile.m */; };
 /* End PBXBuildFile section */
@@ -106,6 +107,8 @@
 		42D21CD51A08B40700D2CB39 /* ESDataManageDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESDataManageDelegate.h; sourceTree = "<group>"; };
 		42D21CD61A08B40700D2CB39 /* ESDataManageDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESDataManageDelegate.m; sourceTree = "<group>"; };
 		42D21CD81A08B60300D2CB39 /* ESDataManageProtocal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ESDataManageProtocal.h; sourceTree = "<group>"; };
+		42DCA61E1A5D0FF300C0765B /* ESAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESAlertView.h; sourceTree = "<group>"; };
+		42DCA61F1A5D0FF300C0765B /* ESAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESAlertView.m; sourceTree = "<group>"; };
 		42F8EFE91A5BDD9B008D1F3E /* ESDownLoadFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESDownLoadFile.h; sourceTree = "<group>"; };
 		42F8EFEA1A5BDD9B008D1F3E /* ESDownLoadFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESDownLoadFile.m; sourceTree = "<group>"; };
 		42F8EFEC1A5BE3BC008D1F3E /* ESUpdateConfigFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESUpdateConfigFile.h; sourceTree = "<group>"; };
@@ -239,6 +242,8 @@
 				42F8EFEA1A5BDD9B008D1F3E /* ESDownLoadFile.m */,
 				42F8EFEC1A5BE3BC008D1F3E /* ESUpdateConfigFile.h */,
 				42F8EFED1A5BE3BC008D1F3E /* ESUpdateConfigFile.m */,
+				42DCA61E1A5D0FF300C0765B /* ESAlertView.h */,
+				42DCA61F1A5D0FF300C0765B /* ESAlertView.m */,
 			);
 			path = EnergySystem;
 			sourceTree = "<group>";
@@ -393,6 +398,7 @@
 				4254491D1A149763003DC549 /* ESConfigTableViewController.m in Sources */,
 				4254492B1A173E73003DC549 /* ESConfigCountyViewController.m in Sources */,
 				4201143419ADDCC900A0BF7F /* ESMainViewController.m in Sources */,
+				42DCA6201A5D0FF300C0765B /* ESAlertView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
