@@ -11,6 +11,7 @@
 #import "ESUserConfigInfo.h"
 #import "ESDataManageDelegate.h"
 #import "ESConfigCityViewController.h"
+#import "ESUpdateConfigFile.h"
 
 #import "MBProgressHUD.h"
 

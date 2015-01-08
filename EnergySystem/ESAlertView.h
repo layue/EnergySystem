@@ -21,7 +21,10 @@
 @property (strong, nonatomic) UILabel *label;
 
 - (void)show;
-- (void)updateProgress:(float) info;
+- (id)initWithMessage:(CGRect)frame:(NSString *)message;
+- (void)updateMessage:(NSString *)message;
+- (void)updateProgress:(float)info;
+- (void)finishedProgress:(NSString *)message;
 - (void)dismiss;
 
 @end

@@ -10,6 +10,13 @@
 
 @implementation ESDownLoadFile
 
+- (id) initWithESAlertView: (ESAlertView *) alertView
+{
+    [alertView updateMessage:@"DownLoad"];
+    _alertView = alertView;
+    return self;
+}
+
 - (void)downloadFile
 {
     [self showESAlert];
@@ -60,7 +67,7 @@
 {
     if (_data.length == _totalLength) {
         NSLog(@"下载完成");
-        //改变Alert的Button状态为可点击
+        [_alertView finishedProgress:@"正在加载..."];
         
     } else {
         [_alertView updateProgress:(float)_data.length/_totalLength];
@@ -70,9 +77,6 @@
 
 - (void) showESAlert
 {
-    _alertView = [[ESAlertView alloc] initWithFrame:[UIScreen mainScreen].applicationFrame];
-    
-    
     [_alertView show];
 }
 

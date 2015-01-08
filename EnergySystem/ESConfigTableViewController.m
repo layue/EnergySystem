@@ -42,7 +42,6 @@
     self.provinces = [[NSMutableArray alloc] init];
     [self.delegate getConfigInfoFromDBDelegate:self.provinces :querySQL :colIndex];
     
-    
     [configData release];
     [dataManageDelegate release];
     self.delegate = nil;
@@ -90,6 +89,15 @@
 
 - (IBAction)updateConfigInfo:(id)sender
 {
+    ESAlertView *alertView = [[ESAlertView alloc] initWithMessage
+                              :[UIScreen mainScreen].applicationFrame
+                              :@"TEST" ];
+    [alertView show];
+    
+    ESUpdateConfigFile *esUpdCfg = [[ESUpdateConfigFile alloc] initWithESAlertView:alertView];
+    [esUpdCfg getUserConfigInfo];
+    
+    /*
     MBProgressHUD *getUserConfigInfoHUD = [[MBProgressHUD alloc] initWithView:self.view];
     [self.view addSubview:getUserConfigInfoHUD];
     getUserConfigInfoHUD.labelText = @"正在更新配置信息...";
@@ -99,10 +107,17 @@
     
     [getUserConfigInfoHUD release];
     [self.tableView reloadData];
+     */
 }
 
 - (void)getUserConfigInfoDetail
 {
+    
+    
+    /*
+     */
+
+   
     ESDataManageDelegate *configDelegate = [[ESDataManageDelegate alloc] init];
     self.delegate = configDelegate;
     
@@ -128,7 +143,6 @@
     }
     
     [configDelegate release];
-    
 }
 
 //提示获取数据结果信息，Block形式

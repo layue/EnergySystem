@@ -19,5 +19,6 @@
     long long _totalLength;
 }
 
+- (id)initWithESAlertView:(ESAlertView *)alertView;
 - (void)downloadFile;
 @end

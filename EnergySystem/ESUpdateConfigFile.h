@@ -11,11 +11,14 @@
 #import "ESDataManageDelegate.h"
 #import "ESDownLoadFile.h"
 #import "ESMD5Util.h"
+#import "ESAlertView.h"
 
 @interface ESUpdateConfigFile : NSObject
 {
-    UIAlertView *_alertView;
+    ESAlertView *_alertView;
 }
+
+- (id) initWithESAlertView:(ESAlertView *)alertView;
 - (void) getUserConfigInfo;
 
 @end

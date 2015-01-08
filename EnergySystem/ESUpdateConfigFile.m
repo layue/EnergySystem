@@ -12,9 +12,9 @@
 
 - (void)getUserConfigInfo
 {
-    ESDataManageDelegate *configDelegate = [[ESDataManageDelegate alloc] init];
+    //[self showCheckingAlert];
     
-   // [self showCheckingAlert];
+    ESDataManageDelegate *configDelegate = [[ESDataManageDelegate alloc] init];
     NSMutableData *data = [[NSMutableData alloc] init];
     [configDelegate getUserConfigInfoDelegate:data];
     
@@ -39,9 +39,10 @@
         
         if ([md5 isEqualToString:result]) {
             NSLog(@"配置文件已是最新");
+            [_alertView updateMessage:@"配置文件已是最新"];
         } else {
             NSLog(@"Downloading...");
-            ESDownLoadFile *dlf = [[ESDownLoadFile alloc] init];
+            ESDownLoadFile *dlf = [[ESDownLoadFile alloc] initWithESAlertView:_alertView];
             [dlf downloadFile];
             
         }
@@ -56,14 +57,11 @@
     [configDelegate release];
 }
 
-- (void) showCheckingAlert
+- (id) initWithESAlertView:(ESAlertView *)alertView;
 {
-    _alertView = [[UIAlertView alloc] initWithTitle:@"更新配置文件"
-                                                        message:@"正在检查更新..."
-                                                       delegate:nil
-                                              cancelButtonTitle:nil
-                                              otherButtonTitles:nil,nil];
-    [_alertView show];
+    _alertView = alertView;
+    
+    return self;
 }
 
 

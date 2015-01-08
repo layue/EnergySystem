@@ -24,6 +24,7 @@
 	// Do any additional setup after loading the view.
     self.firstTouchOnConfigButton = 0;
     [self dbCreateTable];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -54,10 +55,13 @@
 {
     if ([segue.identifier isEqualToString:@"Configuration Info"]) {
         
-        if (self.firstTouchOnConfigButton == 1) {
+        /*
+        firstLogin = YES;
+        if (firstLogin) {
             ESUpdateConfigFile *esUpdCfg = [[ESUpdateConfigFile alloc] init];
             [esUpdCfg getUserConfigInfo];
         }
+         */
     }
 
 }
