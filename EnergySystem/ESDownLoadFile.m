@@ -10,17 +10,23 @@
 
 @implementation ESDownLoadFile
 
-- (id) initWithESAlertView: (ESAlertView *) alertView
+- (id) initWithESAlertView:(ESAlertView *) alertView
 {
-    [alertView updateMessage:@"DownLoad"];
+    [alertView addProgressInfoOnAlertView];
     _alertView = alertView;
     return self;
 }
 
-- (void)downloadFile
+- (void)downloadFile:(NSString *) fileName
 {
-    [self showESAlert];
-    NSString *url = @"http://172.27.200.1:8080/EnergySystem/resources/downloads/1.cfg";
+    _fileName = [fileName mutableCopy];
+    
+    NSString *url = [serverHttpUrl copy];
+    url = [url stringByAppendingString:configFilePath];
+    url = [url stringByAppendingString:fileName];
+    
+    NSLog(@"%@",url);
+    
     NSURL *nsurl = [NSURL URLWithString:url];
     
     NSURLRequest *request = [[NSURLRequest alloc] initWithURL:nsurl cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:15.0f];
@@ -42,9 +48,8 @@
 
 - (void) connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
 {
-    NSLog(@"receiving data");
+    //NSLog(@"receiving data");
     [_data appendData:data];
-    
     [self updateProgress];
 }
 
@@ -53,7 +58,7 @@
     NSLog(@"loading finish");
     
     NSString *savePath = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject];
-    savePath = [savePath stringByAppendingPathComponent:@"185.cfg"];
+    savePath = [savePath stringByAppendingPathComponent:_fileName];
     NSLog(@"%@",savePath);
     [_data writeToFile:savePath atomically:YES];
 }

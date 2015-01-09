@@ -22,6 +22,7 @@
 
 - (void)show;
 - (id)initWithMessage:(CGRect)frame:(NSString *)message;
+- (void)addProgressInfoOnAlertView;
 - (void)updateMessage:(NSString *)message;
 - (void)updateProgress:(float)info;
 - (void)finishedProgress:(NSString *)message;

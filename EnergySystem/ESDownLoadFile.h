@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 #import "ESAlertView.h"
+#import "ESConstants.h"
 
 @interface ESDownLoadFile : NSObject
 {
@@ -17,8 +18,9 @@
     UILabel *_progressLabel;
     NSMutableData *_data;
     long long _totalLength;
+    NSString *_fileName;
 }
 
-- (id)initWithESAlertView:(ESAlertView *)alertView;
-- (void)downloadFile;
+- (id)initWithESAlertView:(ESAlertView *) alertView;
+- (void)downloadFile:(NSString *) fileName;
 @end

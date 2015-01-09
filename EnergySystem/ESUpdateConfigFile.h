@@ -19,6 +19,6 @@
 }
 
 - (id) initWithESAlertView:(ESAlertView *)alertView;
-- (void) getUserConfigInfo;
+- (void) getUserConfigInfo:(ESAlertView *)alertView;
 
 @end

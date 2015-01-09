@@ -91,11 +91,13 @@
 {
     ESAlertView *alertView = [[ESAlertView alloc] initWithMessage
                               :[UIScreen mainScreen].applicationFrame
-                              :@"TEST" ];
+                              :@"检查更新" ];
     [alertView show];
     
     ESUpdateConfigFile *esUpdCfg = [[ESUpdateConfigFile alloc] initWithESAlertView:alertView];
-    [esUpdCfg getUserConfigInfo];
+    
+    [esUpdCfg performSelectorInBackground:@selector(getUserConfigInfo:) withObject:alertView];
+    //[esUpdCfg getUserConfigInfo:alertView];
     
     /*
     MBProgressHUD *getUserConfigInfoHUD = [[MBProgressHUD alloc] initWithView:self.view];

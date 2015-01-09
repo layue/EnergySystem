@@ -24,10 +24,10 @@ NSUserDefaults *userInfoSettings;
 NSDictionary *userInfoDictionary;
 BOOL firstLogin;
 
-static NSString *serverHttpUrl = @"http://10.103.241.63:8080/EnergySystem/";
+static NSString *serverHttpUrl = @"http://172.27.200.1:8080/EnergySystem/";
 static NSString *loginAction   = @"Login_UserBasicAction.action?name=";
 static NSString *configAction  = @"Configuration_UserBasicAction.action?companyId=";
-static NSString *configFilePath = @"resource/downloads/";
+static NSString *configFilePath = @"resources/downloads/";
 
 @interface ESConstants : NSObject
 
