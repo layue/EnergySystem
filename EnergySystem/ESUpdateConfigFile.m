@@ -17,7 +17,7 @@
     ESDataManageDelegate *configDelegate = [[ESDataManageDelegate alloc] init];
     NSMutableData *data = [[NSMutableData alloc] init];
     
-    //[configDelegate performSelectorOnMainThread:@selector(getUserConfigInfoDelegate:) withObject:data waitUntilDone:YES];
+    //[configDelegate performSelectorInBackground:@selector(getUserConfigInfoDelegate:) withObject:data];
     [configDelegate getUserConfigInfoDelegate:data];
     
     
@@ -37,13 +37,10 @@
         ESMD5Util *md5Util = [[ESMD5Util alloc] init];
         NSString *md5 = [md5Util generateFileMD5CheckCode:path];
         NSString *result = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-        NSLog(@"%@",path);
-        NSLog(@"%@",md5);
-        NSLog(@"%@",result);
         
         if ([md5 isEqualToString:result]) {
             NSLog(@"配置文件已是最新");
-            [_alertView updateMessage:@"配置文件已是最新"];
+            [_alertView finishedProgress:@"配置文件已是最新"];
         } else {
             NSLog(@"Downloading...");
             ESDownLoadFile *dlf = [[ESDownLoadFile alloc] initWithESAlertView:_alertView];
@@ -63,12 +60,11 @@
     [configDelegate release];
 }
 
-- (id) initWithESAlertView:(ESAlertView *)alertView;
+- (id) initWithESAlertView:(ESAlertView *)alertView
 {
     _alertView = alertView;
     
     return self;
 }
-
 
 @end

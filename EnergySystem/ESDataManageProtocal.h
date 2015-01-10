@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+#import "ESAlertView.h"
+
 @protocol ESDataManageProtocal <NSObject>
 
 - (void)getUserConfigInfoDelegate:(NSMutableData *) data;
@@ -16,7 +18,8 @@
                        :(NSString *) username
                        :(NSDictionary *) result;
 
-- (BOOL)storeConfigInfoToDBDelegate:(NSDictionary *) data;
+- (BOOL)storeConfigInfoToDBDelegate:(NSDictionary *) data
+                                   :(ESAlertView *)alertView;
 
 - (BOOL)goToMainViewWithFirstLoginDelegate;
 
@@ -25,5 +28,6 @@
 - (void)getConfigInfoFromDBDelegate:(NSMutableArray *) data
                                    :(NSString *) querySQL
                                    :(int) colIndex;
+- (void)loadConfigInfo:(NSString *) path;
 
 @end

@@ -10,17 +10,25 @@
 
 #import "ESAlertView.h"
 #import "ESConstants.h"
+#import "ESDataManageDelegate.h"
 
 @interface ESDownLoadFile : NSObject
 {
     ESAlertView *_alertView;
     UIProgressView *_progressView;
     UILabel *_progressLabel;
-    NSMutableData *_data;
     long long _totalLength;
+    
+    NSMutableData *_data;
     NSString *_fileName;
+    NSString *_path;
+    NSString *_cfgFileContent;
+    ESDataManageDelegate *_delegate;
 }
+
+@property (strong,nonatomic) ESDataManageDelegate *delegate;
 
 - (id)initWithESAlertView:(ESAlertView *) alertView;
 - (void)downloadFile:(NSString *) fileName;
+- (void)loadConfigInfo:(NSString *) path;
 @end

@@ -128,6 +128,11 @@
     _label.text = [NSString stringWithFormat:@"下载配置文件%2.0f%%",info*100];
 }
 
+- (void) updateLoadingProgress:(NSNumber *)info
+{
+    [_progressView setProgress:[info floatValue]];
+    _label.text = [NSString stringWithFormat:@"加载配置文件%2.0f%%",100*[info floatValue]];
+}
 - (void) finishedProgress :(NSString *) message
 {
     [_progressView setProgress:1.0f];
@@ -138,10 +143,14 @@
     [_confirmBtn setTitle:@"确定" forState:UIControlStateNormal];
     [_confirmBtn setTitleColor:[UIColor blueColor]
                       forState:UIControlStateNormal];
-   // [_view addSubview:_confirmBtn];
+    [_confirmBtn addTarget:self
+                    action:@selector(dismiss)forControlEvents:UIControlEventTouchDown];
+    
+    [_view addSubview:_confirmBtn];
 }
 
 - (void) dismiss {
+    self.hidden = YES;
     [self resignKeyWindow];
     [self release];
 }

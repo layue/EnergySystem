@@ -95,7 +95,6 @@
     [alertView show];
     
     ESUpdateConfigFile *esUpdCfg = [[ESUpdateConfigFile alloc] initWithESAlertView:alertView];
-    
     [esUpdCfg performSelectorInBackground:@selector(getUserConfigInfo:) withObject:alertView];
     //[esUpdCfg getUserConfigInfo:alertView];
     

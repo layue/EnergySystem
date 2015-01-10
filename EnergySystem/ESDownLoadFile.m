@@ -10,6 +10,8 @@
 
 @implementation ESDownLoadFile
 
+@synthesize delegate = _delegate;
+
 - (id) initWithESAlertView:(ESAlertView *) alertView
 {
     [alertView addProgressInfoOnAlertView];
@@ -20,12 +22,15 @@
 - (void)downloadFile:(NSString *) fileName
 {
     _fileName = [fileName mutableCopy];
+    _path = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject];
+    _path = [_path stringByAppendingPathComponent:_fileName];
+    [_path retain];
+
+    NSLog(@"%@",_path);
     
     NSString *url = [serverHttpUrl copy];
     url = [url stringByAppendingString:configFilePath];
     url = [url stringByAppendingString:fileName];
-    
-    NSLog(@"%@",url);
     
     NSURL *nsurl = [NSURL URLWithString:url];
     
@@ -48,7 +53,6 @@
 
 - (void) connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
 {
-    //NSLog(@"receiving data");
     [_data appendData:data];
     [self updateProgress];
 }
@@ -56,11 +60,8 @@
 - (void)connectionDidFinishLoading:(NSURLConnection *) connection
 {
     NSLog(@"loading finish");
-    
-    NSString *savePath = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject];
-    savePath = [savePath stringByAppendingPathComponent:_fileName];
-    NSLog(@"%@",savePath);
-    [_data writeToFile:savePath atomically:YES];
+    [_data writeToFile:_path atomically:YES];
+    [self performSelectorInBackground:@selector(loadConfigInfo) withObject:nil];
 }
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
@@ -72,41 +73,31 @@
 {
     if (_data.length == _totalLength) {
         NSLog(@"下载完成");
-        [_alertView finishedProgress:@"正在加载..."];
+         [_alertView updateMessage:@"正在加载..."];
         
     } else {
         [_alertView updateProgress:(float)_data.length/_totalLength];
     }
 }
 
-
 - (void) showESAlert
 {
     [_alertView show];
 }
 
-/*
-- (void) showProgressAlert
+- (void) loadConfigInfo
 {
-    _alertView = [[UIAlertView alloc] initWithTitle:@"下载配置文件"
-                                            message:@"正在下载..."
-                                           delegate:nil
-                                  cancelButtonTitle:nil
-                                  otherButtonTitles:nil, nil];
-    //_progressView = [[UIProgressView alloc] initWithProgressViewStyle:UIProgressViewStyleBar];
+    NSLog(@"%@",_path);
+    NSError *error = [[NSError alloc] init];
+    _cfgFileContent = [NSString stringWithContentsOfFile:_path encoding:NSUTF8StringEncoding error:&error];
+    NSLog(@"COMPLETED!");
+    NSData *contentData = [[NSData alloc] init];
+    contentData = [_cfgFileContent dataUsingEncoding:NSUTF8StringEncoding];
     
-    
-    _progressLabel = [[UILabel alloc] init];
-    _progressLabel.text = @"0%";
-    
-    //_progressView.frame = CGRectMake(10, 20, 100, 10);
-    //_progressView.progress = 0.5f;
-    _progressView.hidden = NO;
-    
-    [_alertView setValue:_progressView forKey:@"accessoryView"];
-    //[_alertView setValue:_progressLabel forKey:@"accessoryView"];
-    [_alertView show];
+    NSDictionary *resultData = [NSJSONSerialization JSONObjectWithData:contentData options:kNilOptions error:nil];
+    _delegate = [[ESDataManageDelegate alloc] init];
+    [self.delegate storeConfigInfoToDBDelegate:resultData:_alertView];
 }
-*/
+
 
 @end

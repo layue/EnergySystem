@@ -25,6 +25,7 @@
 - (void)addProgressInfoOnAlertView;
 - (void)updateMessage:(NSString *)message;
 - (void)updateProgress:(float)info;
+- (void)updateLoadingProgress:(NSNumber *)info;
 - (void)finishedProgress:(NSString *)message;
 - (void)dismiss;
 

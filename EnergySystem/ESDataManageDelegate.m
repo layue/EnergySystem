@@ -70,6 +70,7 @@
 }
 
 - (BOOL) storeConfigInfoToDBDelegate:(NSDictionary *)data
+                                    :(ESAlertView *)alertView
 {
     //开启数据库
     ESSqliteUtil *sqlUtil = [[ESSqliteUtil alloc] init];
@@ -87,9 +88,14 @@
         //更新此用户的配置信息
         //解析rooms数据，插入到数据库esdb的表config中
         NSArray *rooms = [data objectForKey:@"rooms"];
+        NSArray *sites = [data objectForKey:@"sites"];
         NSString *insertSQL = @"INSERT INTO CONFIG (USERID,PROVINCE,CITY,COUNTY,BUILDING,ROOM,TYPE) VALUES";
         NSString *appendSQL = nil;
         NSString *fullSQL = nil;
+        
+        alertView.progressView.progress = 0;
+        int len = [rooms count];
+        len = len + [sites count];
         
         for (int i = 0; i < [rooms count]; ++i) {
             
@@ -104,10 +110,11 @@
                 return NO;
             }
             
+            [alertView performSelectorOnMainThread:@selector(updateLoadingProgress:) withObject:[NSNumber numberWithFloat:(float)i/len] waitUntilDone:YES];
+            
         }
         
         //解析sites数据，插入到数据库esdb的表config中
-        NSArray *sites = [data objectForKey:@"sites"];
         insertSQL = @"INSERT INTO CONFIG (USERID,PROVINCE,CITY,COUNTY,BUILDING,SITE,TYPE) VALUES";
         
         for (int i = 0; i < [sites count]; ++i) {
@@ -124,7 +131,11 @@
                 return NO;
             }
             
+            [alertView performSelectorOnMainThread:@selector(updateLoadingProgress:) withObject:[NSNumber numberWithFloat:(float)(i + [rooms count])/len] waitUntilDone:YES];
+            
         }
+        
+        [alertView performSelectorOnMainThread:@selector(finishedProgress:) withObject:[NSString stringWithFormat:@"更新完成"] waitUntilDone:YES];
         
         [configData release];
     } else {
@@ -232,5 +243,14 @@
     [configData release];
 
 }
+
+- (void) loadConfigInfo:(NSString *)path
+{
+    NSString *cfgFileContent = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
+    NSLog(@"COMPLETED!");
+    NSDictionary *resultData = [NSJSONSerialization JSONObjectWithData:[cfgFileContent dataUsingEncoding:NSUTF8StringEncoding] options:kNilOptions error:nil];
+    [self storeConfigInfoToDBDelegate:resultData];
+}
+
 
 @end

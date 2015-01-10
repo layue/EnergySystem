@@ -14,8 +14,6 @@
 
 - (NSString *)generateFileMD5CheckCode: (NSString *) path
 {
-    NSLog(@"path = %@",path);
-    
     NSFileHandle *handle = [NSFileHandle fileHandleForReadingAtPath:path];
     
     if (handle == nil) {

@@ -16,6 +16,7 @@
 @interface ESUpdateConfigFile : NSObject
 {
     ESAlertView *_alertView;
+    NSString *_cfgFileContent;
 }
 
 - (id) initWithESAlertView:(ESAlertView *)alertView;
