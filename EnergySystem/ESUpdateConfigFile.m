@@ -48,6 +48,7 @@
                                   withObject:companyIdNSString
                                waitUntilDone:YES];
             
+            
         }
         /*
          //解析JSON格式的数据,存入Sqlite本地

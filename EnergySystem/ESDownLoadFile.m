@@ -41,7 +41,6 @@
 
 - (void) connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
 {
-    NSLog(@"receive response");
     _data = [[NSMutableData alloc] init];
     
     _progressView.progress = 0;
@@ -72,7 +71,6 @@
 - (void) updateProgress
 {
     if (_data.length == _totalLength) {
-        NSLog(@"下载完成");
          [_alertView updateMessage:@"正在加载..."];
         
     } else {
@@ -87,10 +85,8 @@
 
 - (void) loadConfigInfo
 {
-    NSLog(@"%@",_path);
     NSError *error = [[NSError alloc] init];
     _cfgFileContent = [NSString stringWithContentsOfFile:_path encoding:NSUTF8StringEncoding error:&error];
-    NSLog(@"COMPLETED!");
     NSData *contentData = [[NSData alloc] init];
     contentData = [_cfgFileContent dataUsingEncoding:NSUTF8StringEncoding];
     

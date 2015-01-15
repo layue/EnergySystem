@@ -42,6 +42,7 @@
 		42DCA6201A5D0FF300C0765B /* ESAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 42DCA61F1A5D0FF300C0765B /* ESAlertView.m */; };
 		42F8EFEB1A5BDD9B008D1F3E /* ESDownLoadFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F8EFEA1A5BDD9B008D1F3E /* ESDownLoadFile.m */; };
 		42F8EFEE1A5BE3BC008D1F3E /* ESUpdateConfigFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F8EFED1A5BE3BC008D1F3E /* ESUpdateConfigFile.m */; };
+		42FD3D311A67A040006B5CCD /* ESSeachInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42FD3D301A67A040006B5CCD /* ESSeachInfoViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,6 +114,8 @@
 		42F8EFEA1A5BDD9B008D1F3E /* ESDownLoadFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESDownLoadFile.m; sourceTree = "<group>"; };
 		42F8EFEC1A5BE3BC008D1F3E /* ESUpdateConfigFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESUpdateConfigFile.h; sourceTree = "<group>"; };
 		42F8EFED1A5BE3BC008D1F3E /* ESUpdateConfigFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESUpdateConfigFile.m; sourceTree = "<group>"; };
+		42FD3D2F1A67A040006B5CCD /* ESSeachInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESSeachInfoViewController.h; sourceTree = "<group>"; };
+		42FD3D301A67A040006B5CCD /* ESSeachInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESSeachInfoViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +185,8 @@
 				4254492D1A174F2A003DC549 /* ESConfigFinalViewController.m */,
 				4254492F1A1EDC4F003DC549 /* ESConfigTabBarViewController.h */,
 				425449301A1EDC50003DC549 /* ESConfigTabBarViewController.m */,
+				42FD3D2F1A67A040006B5CCD /* ESSeachInfoViewController.h */,
+				42FD3D301A67A040006B5CCD /* ESSeachInfoViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -397,6 +402,7 @@
 				42753DC419ADFD3E00CA3D44 /* ESConstants.m in Sources */,
 				4254491D1A149763003DC549 /* ESConfigTableViewController.m in Sources */,
 				4254492B1A173E73003DC549 /* ESConfigCountyViewController.m in Sources */,
+				42FD3D311A67A040006B5CCD /* ESSeachInfoViewController.m in Sources */,
 				4201143419ADDCC900A0BF7F /* ESMainViewController.m in Sources */,
 				42DCA6201A5D0FF300C0765B /* ESAlertView.m in Sources */,
 			);

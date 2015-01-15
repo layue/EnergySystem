@@ -98,7 +98,8 @@
     } else if ([self.title isEqualToString:@"site"]) {
     
         cellIdentifier = @"siteCell";
-        cell = [self.tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
+        cell = [self.tableView dequeueReusableCellWithIdentifier:cellIdentifier
+                                                    forIndexPath:indexPath];
         
         if (cell == nil) {
             cell = [[UITableViewCell alloc]

@@ -62,6 +62,8 @@
             [esUpdCfg getUserConfigInfo];
         }
          */
+    } else if ([segue.identifier isEqualToString:@"searchConfig"]) {
+        NSLog(@"%@",@"searchConfig");
     }
 
 }

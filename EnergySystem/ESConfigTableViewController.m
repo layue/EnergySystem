@@ -96,6 +96,7 @@
     
     ESUpdateConfigFile *esUpdCfg = [[ESUpdateConfigFile alloc] initWithESAlertView:alertView];
     [esUpdCfg performSelectorInBackground:@selector(getUserConfigInfo:) withObject:alertView];
+    [self reloadInputViews];
     //[esUpdCfg getUserConfigInfo:alertView];
     
     /*
