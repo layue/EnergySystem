@@ -28,6 +28,8 @@
                                                          frame.size.height*0.25)];
         _view.center = self.center;
         _view.backgroundColor = [UIColor whiteColor];
+        _view.layer.cornerRadius = 6.0f;
+        _view.layer.masksToBounds = YES;
         
         _progressView = [[UIProgressView alloc]
                          initWithProgressViewStyle:UIProgressViewStyleBar];
@@ -71,6 +73,9 @@
         _view = [[UIView alloc] initWithFrame:CGRectMake(0, 0,
                                                          frame.size.width*0.75,
                                                          frame.size.height*0.25)];
+        _view.layer.cornerRadius = 16.0f;
+        _view.layer.masksToBounds = YES;
+
         _view.center = self.center;
         _view.backgroundColor = [UIColor whiteColor];
         
@@ -114,7 +119,7 @@
                      initWithProgressViewStyle:UIProgressViewStyleBar];
     _progressView.progress = 0.0f;
     _progressView.frame = CGRectMake(_view.frame.size.width*0.125,
-                                     _view.frame.size.height*0.65,
+                                     _view.frame.size.height*0.6,
                                      _view.frame.size.width*0.75, 10);
     
     _label.text = [NSString stringWithFormat:@"开始下载0%%"];
@@ -138,7 +143,10 @@
     [_progressView setProgress:1.0f];
     _label.text = message;
     
-    _confirmBtn = [[UIButton alloc] initWithFrame:CGRectMake(80, 50, 60, 30)];
+    _confirmBtn = [[UIButton alloc] initWithFrame:CGRectMake(_view.frame.size.width*0.38,
+                                                             _view.frame.size.height*0.7,
+                                                             _view.frame.size.width*0.25,25)];
+    
     _confirmBtn.backgroundColor = [UIColor yellowColor];
     [_confirmBtn setTitle:@"确定" forState:UIControlStateNormal];
     [_confirmBtn setTitleColor:[UIColor blueColor]

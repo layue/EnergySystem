@@ -29,13 +29,18 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:YES];
     
     ESUserConfigInfo *configData = [[ESUserConfigInfo alloc] init];
     configData.userid = [userInfoDictionary objectForKey:@"uid"];
     
     ESDataManageDelegate *dataManageDelegate = [[ESDataManageDelegate alloc] init];
     self.delegate = dataManageDelegate;
-
+    
     int colIndex = 0;
     NSString *querySQL = [NSString stringWithFormat:@"SELECT DISTINCT PROVINCE FROM CONFIG WHERE USERID = %d",[configData.userid intValue]];
     
@@ -45,6 +50,7 @@
     [configData release];
     [dataManageDelegate release];
     self.delegate = nil;
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -96,7 +102,7 @@
     
     ESUpdateConfigFile *esUpdCfg = [[ESUpdateConfigFile alloc] initWithESAlertView:alertView];
     [esUpdCfg performSelectorInBackground:@selector(getUserConfigInfo:) withObject:alertView];
-    [self reloadInputViews];
+    [self viewWillAppear:YES];
     //[esUpdCfg getUserConfigInfo:alertView];
     
     /*

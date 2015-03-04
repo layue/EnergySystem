@@ -36,7 +36,7 @@
 - (BOOL)dbCreateTable
 {
     //查询config表是否已建立
-    NSString *sqlCreateTable = @"CREATE TABLE IF NOT EXISTS CONFIG (USERID INTEGER,PROVINCE TEXT,CITY TEXT,COUNTY TEXT,BUILDING TEXT,ROOM TEXT,SITE TEXT,TYPE INTEGER)";
+    NSString *sqlCreateTable = @"CREATE TABLE IF NOT EXISTS TITLETABLE (USERID INTEGER,NAME TEXT,PROVINCE TEXT,CITY TEXT,COUNTY TEXT,BUILDING TEXT,ROOM TEXT,SITE TEXT,KPI TEXT,TIME TEXT,ORDERINFO TEXT)";
     
     ESSqliteUtil *sqlUtil = [[ESSqliteUtil alloc] init];
     if ([sqlUtil open]) {
@@ -55,13 +55,6 @@
 {
     if ([segue.identifier isEqualToString:@"Configuration Info"]) {
         
-        /*
-        firstLogin = YES;
-        if (firstLogin) {
-            ESUpdateConfigFile *esUpdCfg = [[ESUpdateConfigFile alloc] init];
-            [esUpdCfg getUserConfigInfo];
-        }
-         */
     } else if ([segue.identifier isEqualToString:@"searchConfig"]) {
         NSLog(@"%@",@"searchConfig");
     }
@@ -74,6 +67,7 @@
 }
 
 - (IBAction)logout:(id)sender {
+    
     [self performSegueWithIdentifier:@"loginView" sender:self];
 }
 
