@@ -67,7 +67,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3m1-b9-YnV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-27" y="-618"/>
+            <point key="canvasLocation" x="-277" y="-512"/>
         </scene>
         <!--Title Manage View Controller - 标题管理-->
         <scene sceneID="R1h-Pt-IJT">
@@ -77,13 +77,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="nsM-eJ-SY7">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="nsM-eJ-SY7">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="502"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="titleCell" textLabel="Hka-er-TGP" detailTextLabel="Oi2-yZ-Ji3" style="IBUITableViewCellStyleSubtitle" id="a2u-In-siG">
-                                        <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="119" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="a2u-In-siG" id="UoT-B3-q96">
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
@@ -121,6 +121,11 @@
                                 <segue destination="pmr-un-b6C" kind="modal" identifier="mainView" id="Djz-Vb-hmA"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="+" id="vYo-k9-Y4i">
+                            <connections>
+                                <segue destination="vqh-x5-qnK" kind="modal" identifier="searchConditionView" id="aT5-z3-bnC"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="nsM-eJ-SY7" id="rs1-yB-G7r"/>
@@ -128,7 +133,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yMC-gU-sdI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="838" y="-629"/>
+            <point key="canvasLocation" x="698" y="-512"/>
         </scene>
         <!--Title Detail View Controller-->
         <scene sceneID="dEh-PY-gCz">
@@ -171,7 +176,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RSb-wd-bMt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1275" y="-629"/>
+            <point key="canvasLocation" x="1171" y="-512"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="ufC-wZ-h7g">
@@ -303,11 +308,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UQI-ye-IrC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-271" y="-1394"/>
+            <point key="canvasLocation" x="-277" y="-1394"/>
         </scene>
         <!--Seach Info View Controller-->
         <scene sceneID="oV3-d7-u6G">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pAx-KC-3sL" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="aEG-EN-cpP" customClass="ESSeachInfoViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eJe-ps-cvc">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -507,9 +513,8 @@
                         <segue destination="pmr-un-b6C" kind="modal" identifier="mainView" id="YaL-Nd-NWK"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="pAx-KC-3sL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="182" y="-1422"/>
+            <point key="canvasLocation" x="221" y="-1394"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="afk-7v-J3J">
@@ -564,212 +569,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="94c-xV-EBc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="440" y="-635"/>
-        </scene>
-        <!--Seach Info View Controller-->
-        <scene sceneID="9GM-gn-aeg">
-            <objects>
-                <viewController id="TUM-Rx-vky" customClass="ESSeachInfoViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="7BA-Pb-7Vm">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="省" minimumFontSize="17" id="0Rx-AQ-9GK">
-                                <rect key="frame" x="42" y="66" width="202" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <accessibility key="accessibilityConfiguration" label=""/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <attributedString key="userComments">
-                                    <fragment content="省">
-                                        <attributes>
-                                            <font key="NSFont" size="11" name="STHeitiSC-Light"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="市（可选）" minimumFontSize="17" id="vK5-SO-KKm">
-                                <rect key="frame" x="42" y="113" width="202" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="区县（可选）" minimumFontSize="17" id="fTb-5r-2US">
-                                <rect key="frame" x="42" y="157" width="202" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="NCi-aH-1hT">
-                                <rect key="frame" x="42" y="210" width="202" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="LrS-w9-eVt">
-                                <rect key="frame" x="42" y="264" width="202" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="HGf-8x-GWf">
-                                <rect key="frame" x="42" y="324" width="202" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="mt5-E5-dL0">
-                                <rect key="frame" x="42" y="387" width="202" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="j6h-bs-DSv">
-                                <rect key="frame" x="42" y="438" width="202" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="hqV-lh-3v8">
-                                <rect key="frame" x="249" y="498" width="71" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="取消">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="VSG-PZ-oNf">
-                                <rect key="frame" x="28" y="498" width="71" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="设置">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="saveSearchCondition:" destination="TUM-Rx-vky" eventType="touchUpInside" id="IsU-dP-jgj"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="HEe-gM-b3A">
-                                <rect key="frame" x="179" y="65" width="59" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="province">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="getConfigList:" destination="TUM-Rx-vky" eventType="touchUpInside" id="OCk-8k-G3h"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="2aw-qO-GYG">
-                                <rect key="frame" x="192" y="112" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="city">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="getConfigList:" destination="TUM-Rx-vky" eventType="touchUpInside" id="v4v-d9-ZF1"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Idy-Rv-G9U">
-                                <rect key="frame" x="192" y="157" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="county">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="getConfigList:" destination="TUM-Rx-vky" eventType="touchUpInside" id="zGz-P5-EyA"/>
-                                </connections>
-                            </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="h1D-LA-O81">
-                                <rect key="frame" x="47" y="136" width="160" height="209"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cityCell" id="3sb-zs-RGt">
-                                        <rect key="frame" x="0.0" y="22" width="160" height="44"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3sb-zs-RGt" id="GtN-cg-m1f">
-                                            <rect key="frame" x="0.0" y="0.0" width="160" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="prH-Sf-m0G">
-                                <rect key="frame" x="185" y="210" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="building">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="getConfigList:" destination="TUM-Rx-vky" eventType="touchUpInside" id="84f-ta-U7w"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="2h7-zb-OFg">
-                                <rect key="frame" x="192" y="264" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="room">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="getConfigList:" destination="TUM-Rx-vky" eventType="touchUpInside" id="ojb-Si-gj4"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="tLr-Ff-DRp">
-                                <rect key="frame" x="192" y="324" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="KPI">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="getStaticConfigList:" destination="TUM-Rx-vky" eventType="touchUpInside" id="tfZ-g1-Sm7"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="GHE-eb-FTP">
-                                <rect key="frame" x="192" y="386" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="time">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="getStaticConfigList:" destination="TUM-Rx-vky" eventType="touchUpInside" id="X5G-qL-exX"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="a4X-qb-gFs">
-                                <rect key="frame" x="192" y="437" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="order">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="getStaticConfigList:" destination="TUM-Rx-vky" eventType="touchUpInside" id="a6F-ya-1nr"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="ahe-0H-Tfw"/>
-                    <connections>
-                        <outlet property="buildingBtn" destination="prH-Sf-m0G" id="CS4-7s-Qkg"/>
-                        <outlet property="buildingText" destination="NCi-aH-1hT" id="jZa-L9-0N7"/>
-                        <outlet property="cityBtn" destination="2aw-qO-GYG" id="doA-ks-ZiK"/>
-                        <outlet property="cityText" destination="vK5-SO-KKm" id="HwU-KA-ki2"/>
-                        <outlet property="countyBtn" destination="Idy-Rv-G9U" id="ANr-gn-cT8"/>
-                        <outlet property="countyText" destination="fTb-5r-2US" id="zvR-zU-Nas"/>
-                        <outlet property="kpiBtn" destination="tLr-Ff-DRp" id="SN1-Bh-yG1"/>
-                        <outlet property="kpiText" destination="HGf-8x-GWf" id="3ny-O1-m23"/>
-                        <outlet property="orderBtn" destination="a4X-qb-gFs" id="dN6-lA-soU"/>
-                        <outlet property="orderText" destination="j6h-bs-DSv" id="2ig-Hy-cZR"/>
-                        <outlet property="provinceBtn" destination="HEe-gM-b3A" id="50q-wJ-vdt"/>
-                        <outlet property="provinceText" destination="0Rx-AQ-9GK" id="3oa-hX-rM5"/>
-                        <outlet property="roomBtn" destination="2h7-zb-OFg" id="Q9F-xr-M2V"/>
-                        <outlet property="roomText" destination="LrS-w9-eVt" id="zVl-qj-gK6"/>
-                        <outlet property="tableView" destination="h1D-LA-O81" id="0iU-D3-5Av"/>
-                        <outlet property="timeBtn" destination="GHE-eb-FTP" id="cyX-vy-iDQ"/>
-                        <outlet property="timeText" destination="mt5-E5-dL0" id="CJc-S4-thx"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="c81-MV-kng" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="182" y="-1422"/>
+            <point key="canvasLocation" x="202" y="-512"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
@@ -779,7 +579,7 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="rGG-ks-V6k"/>
-        <segue reference="nNL-zv-4AX"/>
+        <segue reference="aT5-z3-bnC"/>
         <segue reference="Djz-Vb-hmA"/>
     </inferredMetricsTieBreakers>
 </document>
