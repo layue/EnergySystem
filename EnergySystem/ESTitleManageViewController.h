@@ -11,10 +11,15 @@
 #import "ESUpdateConfigFile.h"
 #import "ESSqliteUtil.h"
 #import "ESConstants.h"
+#import "ESTitleDetailViewController.h"
 
 @interface ESTitleManageViewController : UIViewController <UITableViewDataSource,UITableViewDelegate>
 {
     NSMutableArray *_data;
+    NSMutableArray *_names;
+    NSMutableArray *_types;
+    NSMutableArray *_provinces;
+    NSMutableArray *_cities;
 }
 @property (retain, nonatomic) IBOutlet UITableView *tableView;
 

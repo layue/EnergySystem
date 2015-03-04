@@ -248,7 +248,7 @@
     ESSqliteUtil *sqlUtil = [[ESSqliteUtil alloc] init];
     if ([sqlUtil open]) {
         NSString *insertSQL = @"INSERT INTO TITLETABLE VALUES";
-        NSString *appendSQL = [NSString stringWithFormat:@" (%d,'%@','%@','%@','%@','%@','%@','%@','%@','%@','%@','%@')",[rsc.uid intValue],rsc.name,@"room",rsc.province,rsc.city,rsc.couty,rsc.building,rsc.room,nil,rsc.kpi,rsc.time,rsc.order];
+        NSString *appendSQL = [NSString stringWithFormat:@" (%d,'%@','%@','%@','%@','%@','%@','%@','%@','%@','%@','%@')",[rsc.uid intValue],rsc.name,@"机房",rsc.province,rsc.city,rsc.couty,rsc.building,rsc.room,@"",rsc.kpi,rsc.time,rsc.order];
        
         [self dbCreateTable];
         insertSQL = [insertSQL stringByAppendingString:appendSQL];

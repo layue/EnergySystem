@@ -8,6 +8,13 @@
 
 #import "ESTitleManageViewController.h"
 
+@interface ESTitleManageViewController()
+{
+    NSString *_name;
+}
+
+@end
+
 @implementation ESTitleManageViewController
 
 @synthesize tableView;
@@ -18,10 +25,13 @@
     [super viewDidLoad];
     
     //加载数据库中的标题
-    _data = [[NSMutableArray alloc] init];
-    //[_data retain];
-    [self loadTitleTable];
+    _names = [[NSMutableArray alloc] init];
+    _provinces = [[NSMutableArray alloc] init];
+    _cities = [[NSMutableArray alloc] init];
+    _types = [[NSMutableArray alloc] init];
     
+    
+    [self loadTitleTable];
     [tableView setDataSource:self];
     [tableView setDelegate:self];
     
@@ -39,12 +49,15 @@
     sqlite3_stmt *stmt;
     
     if ([sqlUtil open]) {
-        NSString *querySQL = [NSString stringWithFormat:@"SELECT USERID,NAME,TYPE FROM TITLETABLE WHERE USERID = %d",[userID intValue]];
+        NSString *querySQL = [NSString stringWithFormat:@"SELECT USERID,NAME,TYPE,PROVINCE,CITY FROM TITLETABLE WHERE USERID = %d",[userID intValue]];
         if (sqlite3_prepare_v2(sqlUtil.db, [querySQL UTF8String], -1, &stmt, nil) == SQLITE_OK)
         {
             
             while (sqlite3_step(stmt) == SQLITE_ROW) {
-               [_data addObject:[[NSString alloc] initWithUTF8String:(char *)sqlite3_column_text(stmt,1)]];
+               [_names addObject:[[NSString alloc] initWithUTF8String:(char *)sqlite3_column_text(stmt,1)]];
+                [_types addObject:[[NSString alloc] initWithUTF8String:(char *)sqlite3_column_text(stmt,2)]];
+                [_provinces addObject:[[NSString alloc] initWithUTF8String:(char *)sqlite3_column_text(stmt,3)]];
+                [_cities addObject:[[NSString alloc] initWithUTF8String:(char *)sqlite3_column_text(stmt,4)]];
             }
         }
         [sqlUtil close];
@@ -69,7 +82,7 @@
 {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return [_data count];
+    return [_names count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -80,12 +93,18 @@
     // Configure cell...
     if (cell == nil) {
         cell = [[UITableViewCell alloc]
-                initWithStyle:UITableViewCellStyleDefault
+                initWithStyle:UITableViewCellStyleSubtitle
                 reuseIdentifier:CellIdentifier];
     }
     
     NSUInteger row = [indexPath row];
-    cell.textLabel.text = [_data objectAtIndex:row];
+    cell.textLabel.text = [_names objectAtIndex:row];
+    cell.detailTextLabel.text = [_types objectAtIndex:row];
+    cell.detailTextLabel.text = [cell.detailTextLabel.text stringByAppendingString:@"、"];
+    cell.detailTextLabel.text = [cell.detailTextLabel.text stringByAppendingString:[_provinces objectAtIndex:row]];
+    cell.detailTextLabel.text = [cell.detailTextLabel.text stringByAppendingString:@"、"];
+    cell.detailTextLabel.text = [cell.detailTextLabel.text stringByAppendingString:[_cities objectAtIndex:row]];
+    
     
     return cell;
 }
@@ -93,9 +112,46 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-    
 }
 
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (editingStyle == UITableViewCellEditingStyleDelete)
+    {
+        //删除数据库中的数据
+        NSString *deleteSQL = [NSString stringWithFormat:@"DELETE FROM TITLETABLE WHERE NAME = '%@'",[_names objectAtIndex:indexPath.row]];
+        
+        ESSqliteUtil *sqlUtil = [[ESSqliteUtil alloc] init];
+        
+        if ([sqlUtil open]) {
+            if (![sqlUtil execSQL:deleteSQL]) {
+                NSLog(@"INSERT ERROR");
+            }
+
+            [sqlUtil close];
+        }
+        
+        //删除数据操作
+        [_names removeObjectAtIndex:indexPath.row];
+        [_types removeObjectAtIndex:indexPath.row];
+        [_provinces removeObjectAtIndex:indexPath.row];
+        [_cities removeObjectAtIndex:indexPath.row];
+        
+        //刷新列表
+        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        [tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationNone];
+    }
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"titleDetail"]) {
+        ESTitleDetailViewController *titleDetail = (ESTitleDetailViewController *)segue.destinationViewController;
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+        titleDetail.name = cell.textLabel.text;
+    }
+}
 
 - (void)dealloc {
     //[_tableView release];
