@@ -1,38 +1,25 @@
 //
-//  ESSeachInfoViewController.m
+//  ESSiteSearchInfoViewController.m
 //  EnergySystem
 //
-//  Created by tseg on 15-1-15.
+//  Created by tseg on 15-3-5.
 //  Copyright (c) 2015年 tseg. All rights reserved.
 //
 
-#import "ESSeachInfoViewController.h"
+#import "ESSiteSearchInfoViewController.h"
 
-@interface ESSeachInfoViewController ()
+@interface ESSiteSearchInfoViewController ()
 
 @end
 
-@implementation ESSeachInfoViewController
+@implementation ESSiteSearchInfoViewController
 
 @synthesize tableView;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    //_data = [[NSArray alloc] initWithObjects:@"1",@"2",nil];
-    
-    tableView.hidden = YES;
-    [tableView setDelegate:self];
-    [tableView setDataSource:self];
-    
 	// Do any additional setup after loading the view.
-    
-        
-}
-
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:YES];
 }
 
 
@@ -53,9 +40,9 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"roomCell";
+    static NSString *CellIdentifier = @"siteCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-
+    
     // Configure cell...
     if (cell == nil) {
         cell = [[UITableViewCell alloc]
@@ -82,15 +69,9 @@
     } else if (tableView.center.x == self.countyText.center.x &&
                tableView.center.y == self.countyText.center.y) {
         self.countyText.text = cell.textLabel.text;
-    } else if (tableView.center.x == self.buildingText.center.x &&
-               tableView.center.y == self.buildingText.center.y) {
-        self.buildingText.text = cell.textLabel.text;
-    } else if (tableView.center.x == self.roomText.center.x &&
-              tableView.center.y == self.roomText.center.y) {
-        self.roomText.text = cell.textLabel.text;
-    } else if (tableView.center.x == self.kpiText.center.x &&
-               tableView.center.y == self.kpiText.center.y) {
-        self.kpiText.text = cell.textLabel.text;
+    } else if (tableView.center.x == self.KPIText.center.x &&
+               tableView.center.y == self.KPIText.center.y) {
+        self.KPIText.text = cell.textLabel.text;
     } else if (tableView.center.x == self.timeText.center.x &&
                tableView.center.y == self.timeText.center.y) {
         self.timeText.text = cell.textLabel.text;
@@ -123,7 +104,7 @@
         tableView.center = self.cityText.center;
         urlAsString = [urlAsString stringByAppendingString:@"&province="];
         urlAsString = [urlAsString stringByAppendingString:self.provinceText.text];
-
+        
     } else if (sender == self.countyBtn) {
         NSLog(@"countyBtn");
         tableView.center = self.countyText.center;
@@ -131,8 +112,8 @@
         urlAsString = [urlAsString stringByAppendingString:self.provinceText.text];
         urlAsString = [urlAsString stringByAppendingString:@"&city="];
         urlAsString = [urlAsString stringByAppendingString:self.cityText.text];
-    } else if (sender == self.buildingBtn) {
-        tableView.center = self.buildingText.center;
+    } else if (sender == self.siteBtn) {
+        tableView.center = self.siteText.center;
         urlAsString = [urlAsString stringByAppendingString:@"&province="];
         urlAsString = [urlAsString stringByAppendingString:self.provinceText.text];
         urlAsString = [urlAsString stringByAppendingString:@"&city="];
@@ -140,37 +121,24 @@
         urlAsString = [urlAsString stringByAppendingString:@"&country="];
         urlAsString = [urlAsString stringByAppendingString:self.countyText.text];
         urlAsString = [urlAsString stringByAppendingString:@"&type="];
-        urlAsString = [urlAsString stringByAppendingString:@"机楼"];
-    } else if (sender == self.roomBtn) {
-        tableView.center = self.roomText.center;
-        urlAsString = [urlAsString stringByAppendingString:@"&province="];
-        urlAsString = [urlAsString stringByAppendingString:self.provinceText.text];
-        urlAsString = [urlAsString stringByAppendingString:@"&city="];
-        urlAsString = [urlAsString stringByAppendingString:self.cityText.text];
-        urlAsString = [urlAsString stringByAppendingString:@"&country="];
-        urlAsString = [urlAsString stringByAppendingString:self.countyText.text];
-        urlAsString = [urlAsString stringByAppendingString:@"&type="];
-        urlAsString = [urlAsString stringByAppendingString:@"机房"];
-        urlAsString = [urlAsString stringByAppendingString:@"&building="];
-        urlAsString = [urlAsString stringByAppendingString:self.buildingText.text];
+        urlAsString = [urlAsString stringByAppendingString:@"基站"];
     }
     
     
-
     urlAsString = [urlAsString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     NSLog(@"%@",urlAsString);
     NSURL *url = [NSURL URLWithString:urlAsString];
-        
+    
     NSMutableURLRequest *urlRequest = [NSMutableURLRequest requestWithURL:url];
     [urlRequest setTimeoutInterval:NETWORKTIMEOUT];
     [urlRequest setHTTPMethod:@"POST"];
-        
+    
     //发送同步Http信息
     NSURLResponse *response = nil;
     NSError *connectionError = nil;
     NSData *tmpData = [NSURLConnection sendSynchronousRequest:urlRequest
-                                                returningResponse:&response
-                                                            error:&connectionError];
+                                            returningResponse:&response
+                                                        error:&connectionError];
     if ([tmpData length] > 0) {
         NSDictionary *resultData = [NSJSONSerialization JSONObjectWithData:tmpData
                                                                    options:kNilOptions error:nil];
@@ -188,9 +156,9 @@
 
 - (IBAction)getStaticConfigList:(id)sender
 {
-    if (sender == self.kpiBtn) {
-        tableView.center = self.kpiText.center;
-        _data = [[NSArray alloc] initWithObjects:@"机房总耗电",@"机房空调耗电", nil];
+    if (sender == self.KPIBtn) {
+        tableView.center = self.KPIText.center;
+        _data = [[NSArray alloc] initWithObjects:@"基站总耗电",@"空调耗电", nil];
         [_data retain];
     } else if (sender == self.timeBtn) {
         tableView.center = self.timeText.center;
@@ -218,23 +186,21 @@
 {
     if (buttonIndex == 1) {
         
-        ESRoomSearchCondition *rsc = [[ESRoomSearchCondition alloc] init];
+        ESSiteSearchCondition *ssc = [[ESSiteSearchCondition alloc] init];
         UITextField *textView = [alertView textFieldAtIndex:0];
         extern NSDictionary *userInfoDictionary;
         
-        rsc.uid = [userInfoDictionary objectForKey:@"uid"];
-        rsc.name = textView.text;
-        rsc.province = self.provinceText.text;
-        rsc.city = self.cityText.text;
-        rsc.couty = self.countyText.text;
-        rsc.building = self.buildingText.text;
-        rsc.room = self.roomText.text;
-        rsc.kpi = self.kpiText.text;
-        rsc.time = self.timeText.text;
-        rsc.order = self.orderText.text;
+        ssc.uid = [userInfoDictionary objectForKey:@"uid"];
+        ssc.name = textView.text;
+        ssc.province = self.provinceText.text;
+        ssc.city = self.cityText.text;
+        ssc.couty = self.countyText.text;
+        ssc.kpi = self.KPIText.text;
+        ssc.time = self.timeText.text;
+        ssc.order = self.orderText.text;
         
         //将当前设置的查询条件作为标题存入数据库，通过标题管理功能执行查询操作
-        [self insertSearchConditionIntoDB:rsc];
+        [self insertSearchConditionIntoDB:ssc];
         
         //segue to mainView
         [self goToMainView];
@@ -242,14 +208,14 @@
     
 }
 
-- (void)insertSearchConditionIntoDB:(ESRoomSearchCondition *)rsc
+- (void)insertSearchConditionIntoDB:(ESSiteSearchCondition *)ssc
 {
     //open db
     ESSqliteUtil *sqlUtil = [[ESSqliteUtil alloc] init];
     if ([sqlUtil open]) {
         NSString *insertSQL = @"INSERT INTO TITLETABLE VALUES";
-        NSString *appendSQL = [NSString stringWithFormat:@" (%d,'%@','%@','%@','%@','%@','%@','%@','%@','%@','%@','%@')",[rsc.uid intValue],rsc.name,@"机房",rsc.province,rsc.city,rsc.couty,rsc.building,rsc.room,@"",rsc.kpi,rsc.time,rsc.order];
-       
+        NSString *appendSQL = [NSString stringWithFormat:@" (%d,'%@','%@','%@','%@','%@','%@','%@','%@','%@','%@','%@')",[ssc.uid intValue],ssc.name,@"基站",ssc.province,ssc.city,ssc.couty,@"",@"",ssc.site,ssc.kpi,ssc.time,ssc.order];
+        
         [self dbCreateTable];
         insertSQL = [insertSQL stringByAppendingString:appendSQL];
         
@@ -281,26 +247,26 @@
     [self performSegueWithIdentifier:@"mainView" sender:self];
 }
 
+
+
+
 - (void)dealloc {
-    [_provinceBtn release];
-    
-    //[_tableView release];
     [_provinceText release];
+    [tableView release];
     [_cityText release];
-    [_cityBtn release];
     [_countyText release];
-    [_buildingText release];
-    [_buildingText release];
-    [_roomText release];
-    [_countyBtn release];
-    [_buildingBtn release];
-    [_roomBtn release];
-    [_kpiBtn release];
-    [_timeBtn release];
-    [_orderBtn release];
-    [_kpiText release];
+    [_siteText release];
+    [_KPIText release];
     [_timeText release];
     [_orderText release];
+    [_provinceBtn release];
+    [_cityBtn release];
+    [_countyBtn release];
+    [_siteBtn release];
+    [_KPIBtn release];
+    [_timeBtn release];
+    [_orderBtn release];
     [super dealloc];
 }
+
 @end

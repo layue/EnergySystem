@@ -44,6 +44,8 @@
 		42F27A351AA59F1B005A9F92 /* ESRoomSearchCondition.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F27A341AA59F1B005A9F92 /* ESRoomSearchCondition.m */; };
 		42F27A381AA6A3E1005A9F92 /* ESTitleManageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F27A371AA6A3E1005A9F92 /* ESTitleManageViewController.m */; };
 		42F27A3B1AA6EB20005A9F92 /* ESTitleDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F27A3A1AA6EB20005A9F92 /* ESTitleDetailViewController.m */; };
+		42F27A3E1AA7FD50005A9F92 /* ESSiteSearchInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F27A3D1AA7FD50005A9F92 /* ESSiteSearchInfoViewController.m */; };
+		42F27A411AA80179005A9F92 /* ESSiteSearchCondition.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F27A401AA80179005A9F92 /* ESSiteSearchCondition.m */; };
 		42F8EFEB1A5BDD9B008D1F3E /* ESDownLoadFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F8EFEA1A5BDD9B008D1F3E /* ESDownLoadFile.m */; };
 		42F8EFEE1A5BE3BC008D1F3E /* ESUpdateConfigFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F8EFED1A5BE3BC008D1F3E /* ESUpdateConfigFile.m */; };
 		42FD3D311A67A040006B5CCD /* ESSeachInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42FD3D301A67A040006B5CCD /* ESSeachInfoViewController.m */; };
@@ -122,6 +124,10 @@
 		42F27A371AA6A3E1005A9F92 /* ESTitleManageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESTitleManageViewController.m; sourceTree = "<group>"; };
 		42F27A391AA6EB20005A9F92 /* ESTitleDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESTitleDetailViewController.h; sourceTree = "<group>"; };
 		42F27A3A1AA6EB20005A9F92 /* ESTitleDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESTitleDetailViewController.m; sourceTree = "<group>"; };
+		42F27A3C1AA7FD50005A9F92 /* ESSiteSearchInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESSiteSearchInfoViewController.h; sourceTree = "<group>"; };
+		42F27A3D1AA7FD50005A9F92 /* ESSiteSearchInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESSiteSearchInfoViewController.m; sourceTree = "<group>"; };
+		42F27A3F1AA80179005A9F92 /* ESSiteSearchCondition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESSiteSearchCondition.h; sourceTree = "<group>"; };
+		42F27A401AA80179005A9F92 /* ESSiteSearchCondition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESSiteSearchCondition.m; sourceTree = "<group>"; };
 		42F8EFE91A5BDD9B008D1F3E /* ESDownLoadFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESDownLoadFile.h; sourceTree = "<group>"; };
 		42F8EFEA1A5BDD9B008D1F3E /* ESDownLoadFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESDownLoadFile.m; sourceTree = "<group>"; };
 		42F8EFEC1A5BE3BC008D1F3E /* ESUpdateConfigFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESUpdateConfigFile.h; sourceTree = "<group>"; };
@@ -203,6 +209,8 @@
 				42F27A371AA6A3E1005A9F92 /* ESTitleManageViewController.m */,
 				42F27A391AA6EB20005A9F92 /* ESTitleDetailViewController.h */,
 				42F27A3A1AA6EB20005A9F92 /* ESTitleDetailViewController.m */,
+				42F27A3C1AA7FD50005A9F92 /* ESSiteSearchInfoViewController.h */,
+				42F27A3D1AA7FD50005A9F92 /* ESSiteSearchInfoViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -269,6 +277,8 @@
 				42F0B4891A70DA2D0007B58C /* ESQueryInfo.m */,
 				42F27A331AA59F1B005A9F92 /* ESRoomSearchCondition.h */,
 				42F27A341AA59F1B005A9F92 /* ESRoomSearchCondition.m */,
+				42F27A3F1AA80179005A9F92 /* ESSiteSearchCondition.h */,
+				42F27A401AA80179005A9F92 /* ESSiteSearchCondition.m */,
 			);
 			path = EnergySystem;
 			sourceTree = "<group>";
@@ -416,6 +426,7 @@
 				425159441A5BC3CD00A0B6D2 /* ESMD5Util.m in Sources */,
 				4261B70319AB242F00A91C86 /* ESAppDelegate.m in Sources */,
 				4261B6FF19AB242F00A91C86 /* main.m in Sources */,
+				42F27A3E1AA7FD50005A9F92 /* ESSiteSearchInfoViewController.m in Sources */,
 				427116AB19AF5A9600E1A114 /* ESUserConfigInfo.m in Sources */,
 				42F8EFEE1A5BE3BC008D1F3E /* ESUpdateConfigFile.m in Sources */,
 				425449231A159AFE003DC549 /* ESGuideViewController.m in Sources */,
@@ -429,6 +440,7 @@
 				42FD3D311A67A040006B5CCD /* ESSeachInfoViewController.m in Sources */,
 				4201143419ADDCC900A0BF7F /* ESMainViewController.m in Sources */,
 				42DCA6201A5D0FF300C0765B /* ESAlertView.m in Sources */,
+				42F27A411AA80179005A9F92 /* ESSiteSearchCondition.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
