@@ -32,5 +32,7 @@
 @property (retain, nonatomic) IBOutlet UIButton *timeBtn;
 @property (retain, nonatomic) IBOutlet UIButton *orderBtn;
 - (IBAction)getConfigList:(id)sender;
+- (IBAction)getStaticConfigList:(id)sender;
+- (IBAction)saveSearchConditionIntoDB:(id)sender;
 
 @end

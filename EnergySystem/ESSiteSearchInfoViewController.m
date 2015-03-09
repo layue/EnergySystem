@@ -20,6 +20,10 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    
+    [tableView setDataSource:self];
+    [tableView setDelegate:self];
+    tableView.hidden = YES;
 }
 
 
@@ -69,6 +73,9 @@
     } else if (tableView.center.x == self.countyText.center.x &&
                tableView.center.y == self.countyText.center.y) {
         self.countyText.text = cell.textLabel.text;
+    } else if (tableView.center.x == self.siteText.center.x &&
+               tableView.center.y == self.siteText.center.y) {
+        self.siteText.text = cell.textLabel.text;
     } else if (tableView.center.x == self.KPIText.center.x &&
                tableView.center.y == self.KPIText.center.y) {
         self.KPIText.text = cell.textLabel.text;
@@ -174,7 +181,7 @@
     tableView.hidden = NO;
 }
 
-- (IBAction)saveSearchCondition:(id)sender
+- (IBAction)saveSearchConditionIntoDB:(id)sender
 {
     UIAlertView *inputNameAlert = [[UIAlertView alloc] initWithTitle:@"标题名称" message:nil delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"保存", nil];
     [inputNameAlert setAlertViewStyle:UIAlertViewStylePlainTextInput];
@@ -195,6 +202,7 @@
         ssc.province = self.provinceText.text;
         ssc.city = self.cityText.text;
         ssc.couty = self.countyText.text;
+        ssc.site = self.siteText.text;
         ssc.kpi = self.KPIText.text;
         ssc.time = self.timeText.text;
         ssc.order = self.orderText.text;
