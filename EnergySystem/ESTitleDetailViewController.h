@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 #import "ESSqliteUtil.h"
+#import "ESSearchResultViewController.h"
 
 @interface ESTitleDetailViewController : UIViewController <UITableViewDataSource,UITableViewDelegate>
 {

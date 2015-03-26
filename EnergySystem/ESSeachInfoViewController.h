@@ -27,7 +27,6 @@
 @property (retain, nonatomic) IBOutlet UITextField *orderText;
 
 
-
 @property (retain, nonatomic) IBOutlet UITableView *tableView;
 @property (retain, nonatomic) IBOutlet UIButton *provinceBtn;
 @property (retain, nonatomic) IBOutlet UIButton *cityBtn;

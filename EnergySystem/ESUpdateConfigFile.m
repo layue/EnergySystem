@@ -50,6 +50,7 @@
             
             
         }
+        
         /*
          //解析JSON格式的数据,存入Sqlite本地
          NSDictionary *resultData = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];

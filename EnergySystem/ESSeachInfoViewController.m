@@ -190,11 +190,11 @@
 {
     if (sender == self.kpiBtn) {
         tableView.center = self.kpiText.center;
-        _data = [[NSArray alloc] initWithObjects:@"机房总耗电",@"机房空调耗电", nil];
+        _data = [[NSArray alloc] initWithObjects:@"机房总耗电",@"机房空调耗电",@"机房照明耗电",@"机房主设备耗电",@"机房插座耗电",@"机房室内温度",@"机房室外温度",@"机房室内湿度",@"机房室外湿度", nil];
         [_data retain];
     } else if (sender == self.timeBtn) {
         tableView.center = self.timeText.center;
-        _data = [[NSArray alloc] initWithObjects:@"天",@"小时", nil];
+        _data = [[NSArray alloc] initWithObjects:@"日",@"小时", nil];
         [_data retain];
     } else if (sender == self.orderBtn) {
         tableView.center = self.orderText.center;

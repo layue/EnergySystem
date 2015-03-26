@@ -165,11 +165,11 @@
 {
     if (sender == self.KPIBtn) {
         tableView.center = self.KPIText.center;
-        _data = [[NSArray alloc] initWithObjects:@"基站总耗电",@"空调耗电", nil];
+        _data = [[NSArray alloc] initWithObjects:@"基站总耗电",@"基站空调耗电",@"基站照明耗电",@"基站主设备耗电",@"基站开关电源耗电",@"基站2G话务量耗电",@"基站3G话务量",@"基站2G数据业务流量",@"基站3G数据业务流量",@"基站室内温度",@"基站室外温度",@"基站室内湿度",@"基站室外湿度", nil];
         [_data retain];
     } else if (sender == self.timeBtn) {
         tableView.center = self.timeText.center;
-        _data = [[NSArray alloc] initWithObjects:@"天",@"小时", nil];
+        _data = [[NSArray alloc] initWithObjects:@"日",@"小时", nil];
         [_data retain];
     } else if (sender == self.orderBtn) {
         tableView.center = self.orderText.center;

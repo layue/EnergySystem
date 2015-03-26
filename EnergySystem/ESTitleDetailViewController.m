@@ -148,10 +148,26 @@
     return cell;
 }
 
-- (void)didReceiveMemoryWarning
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    if ([segue.identifier isEqualToString:@"resultView"]) {
+        if ([segue.destinationViewController isKindOfClass:
+             [UITabBarController class]]) {
+            UITabBarController *viewController = (UITabBarController *)segue.destinationViewController;
+            ESSearchResultViewController *srv = (ESSearchResultViewController *)viewController.viewControllers[0];
+            
+            srv.placeType = [_data objectAtIndex:1];
+            srv.province = [_data objectAtIndex:2];
+            srv.city = [_data objectAtIndex:3];
+            srv.county = [_data objectAtIndex:4];
+            srv.building = [_data objectAtIndex:5];
+            srv.room = [_data objectAtIndex:6];
+            srv.site = [_data objectAtIndex:7];
+            srv.kpi = [_data objectAtIndex:8];
+            srv.time = [_data objectAtIndex:9];
+            srv.sort = [_data objectAtIndex:10];
+        }
+    }
 }
 
 - (void)dealloc {
