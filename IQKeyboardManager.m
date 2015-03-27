@@ -215,6 +215,7 @@
 -(void)dealloc
 {
     //  Disable the keyboard manager.
+    [super dealloc];
 	[self setEnable:NO];
 	[[NSNotificationCenter defaultCenter] removeObserver:self];
 }

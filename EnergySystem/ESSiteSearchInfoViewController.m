@@ -14,30 +14,28 @@
 
 @implementation ESSiteSearchInfoViewController
 
-@synthesize tableView;
+@synthesize pTableView;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    [tableView setDataSource:self];
-    [tableView setDelegate:self];
-    tableView.hidden = YES;
+    [pTableView setDataSource:self];
+    [pTableView setDelegate:self];
+    pTableView.hidden = YES;
 }
 
 
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
     return [_data count];
 }
@@ -103,24 +101,24 @@
     
     if (sender == self.provinceBtn) {
         //省份为空，获取新的省级信息
-        tableView.frame = CGRectMake(self.provinceText.frame.origin.x, self.provinceText.frame.origin.y + self.provinceText.frame.size.height, 0.75*self.provinceText.frame.size.width, 4*self.provinceText.frame.size.height);
-        tableView.center = self.provinceText.center;
+        pTableView.frame = CGRectMake(self.provinceText.frame.origin.x, self.provinceText.frame.origin.y + self.provinceText.frame.size.height, 0.75*self.provinceText.frame.size.width, 4*self.provinceText.frame.size.height);
+        pTableView.center = self.provinceText.center;
         NSLog(@"provinceBtn");
     } else if (sender == self.cityBtn) {
         NSLog(@"cityBtn");
-        tableView.center = self.cityText.center;
+        pTableView.center = self.cityText.center;
         urlAsString = [urlAsString stringByAppendingString:@"&province="];
         urlAsString = [urlAsString stringByAppendingString:self.provinceText.text];
         
     } else if (sender == self.countyBtn) {
         NSLog(@"countyBtn");
-        tableView.center = self.countyText.center;
+        pTableView.center = self.countyText.center;
         urlAsString = [urlAsString stringByAppendingString:@"&province="];
         urlAsString = [urlAsString stringByAppendingString:self.provinceText.text];
         urlAsString = [urlAsString stringByAppendingString:@"&city="];
         urlAsString = [urlAsString stringByAppendingString:self.cityText.text];
     } else if (sender == self.siteBtn) {
-        tableView.center = self.siteText.center;
+        pTableView.center = self.siteText.center;
         urlAsString = [urlAsString stringByAppendingString:@"&province="];
         urlAsString = [urlAsString stringByAppendingString:self.provinceText.text];
         urlAsString = [urlAsString stringByAppendingString:@"&city="];
@@ -153,32 +151,32 @@
         if ([status intValue] == 200) {
             _data = [resultData objectForKey:@"name"];
             [_data retain];
-            [tableView reloadData];
+            [pTableView reloadData];
         }
     }
     
-    tableView.hidden = NO;
+    pTableView.hidden = NO;
     
 }
 
 - (IBAction)getStaticConfigList:(id)sender
 {
     if (sender == self.KPIBtn) {
-        tableView.center = self.KPIText.center;
+        pTableView.center = self.KPIText.center;
         _data = [[NSArray alloc] initWithObjects:@"基站总耗电",@"基站空调耗电",@"基站照明耗电",@"基站主设备耗电",@"基站开关电源耗电",@"基站2G话务量耗电",@"基站3G话务量",@"基站2G数据业务流量",@"基站3G数据业务流量",@"基站室内温度",@"基站室外温度",@"基站室内湿度",@"基站室外湿度", nil];
         [_data retain];
     } else if (sender == self.timeBtn) {
-        tableView.center = self.timeText.center;
+        pTableView.center = self.timeText.center;
         _data = [[NSArray alloc] initWithObjects:@"日",@"小时", nil];
         [_data retain];
     } else if (sender == self.orderBtn) {
-        tableView.center = self.orderText.center;
+        pTableView.center = self.orderText.center;
         _data = [[NSArray alloc] initWithObjects:@"升序",@"降序", nil];
         [_data retain];
     }
     
-    [tableView reloadData];
-    tableView.hidden = NO;
+    [pTableView reloadData];
+    pTableView.hidden = NO;
 }
 
 - (IBAction)saveSearchConditionIntoDB:(id)sender
@@ -260,7 +258,7 @@
 
 - (void)dealloc {
     [_provinceText release];
-    [tableView release];
+    [pTableView release];
     [_cityText release];
     [_countyText release];
     [_siteText release];

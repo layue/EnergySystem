@@ -30,5 +30,4 @@
 
 - (id)initWithESAlertView:(ESAlertView *) alertView;
 - (void)downloadFile:(NSString *) fileName;
-- (void)loadConfigInfo:(NSString *) path;
 @end

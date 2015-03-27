@@ -24,6 +24,7 @@ NSUserDefaults *userInfoSettings;
 NSDictionary *userInfoDictionary;
 BOOL firstLogin;
 
+//这里应该设计成一个单例模式
 static NSString *serverHttpUrl = @"http://10.103.240.155:8080/EnergySystem/";
 static NSString *loginAction   = @"Login_UserBasicAction.action?name=";
 static NSString *configAction  = @"Configuration_UserBasicAction.action?companyId=";

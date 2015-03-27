@@ -17,7 +17,7 @@
 
 @implementation ESTitleManageViewController
 
-@synthesize tableView;
+@synthesize pTableView;
 
 - (void)viewDidLoad
 {
@@ -32,8 +32,8 @@
     
     
     [self loadTitleTable];
-    [tableView setDataSource:self];
-    [tableView setDelegate:self];
+    [pTableView setDataSource:self];
+    [pTableView setDelegate:self];
     
     
     
@@ -73,14 +73,12 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
     return [_names count];
 }
@@ -108,11 +106,6 @@
     
     
     return cell;
-}
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -153,14 +146,14 @@
 {
     if ([segue.identifier isEqualToString:@"titleDetail"]) {
         ESTitleDetailViewController *titleDetail = (ESTitleDetailViewController *)segue.destinationViewController;
-        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+        NSIndexPath *indexPath = [self.pTableView indexPathForSelectedRow];
+        UITableViewCell *cell = [self.pTableView cellForRowAtIndexPath:indexPath];
         titleDetail.name = cell.textLabel.text;
     }
 }
 
 - (void)dealloc {
-    //[_tableView release];
+    [pTableView release];
     [super dealloc];
 }
 @end

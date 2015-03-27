@@ -21,6 +21,6 @@
     NSMutableArray *_provinces;
     NSMutableArray *_cities;
 }
-@property (retain, nonatomic) IBOutlet UITableView *tableView;
+@property (retain, nonatomic) IBOutlet UITableView *pTableView;
 
 @end

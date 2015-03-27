@@ -10,6 +10,7 @@
 
 @interface ESSearchResultChartViewController ()
 {
+    NSArray *_data;
     UUChart *_chartLineView;
     UUChart *_chartBarView;
 }
@@ -17,33 +18,50 @@
 
 @implementation ESSearchResultChartViewController
 
+@synthesize data=_data;
+@synthesize pTableView;
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
-    _chartLineView = [[UUChart alloc] initwithUUChartDataFrame:CGRectMake(100, 100, 100, 100) withSource:self withStyle:UUChartLineStyle];
-    _chartBarView = [[UUChart alloc] initwithUUChartDataFrame:CGRectMake(100, 100, 100, 100) withSource:self withStyle:UUChartBarStyle];
     
-    
-    [self.tableView setDataSource:self];
-    [self.tableView setDelegate:self];
+    [self.pTableView setDataSource:self];
+    [self.pTableView setDelegate:self];
 }
 
 - (NSArray *)UUChart_xLableArray:(UUChart *)chart
 {
-    NSArray * array = [NSArray arrayWithObjects:@"1",@"2",@"3",@"4", nil];
-    return array;
+    NSMutableArray *_xDate = [[NSMutableArray alloc] init];
+    NSLog(@"%d",[_data count]);
+    NSLog(@"%@",[[_data objectAtIndex:0] objectForKey:@"date"]);
+    
+    for (int i = 0; i < [_data count]; ++i) {
+        [_xDate addObject:[[_data objectAtIndex:i] objectForKey:@"date"]];
+    }
+
+    return _xDate;
 }
 
 - (NSArray *)UUChart_yValueArray:(UUChart *)chart
 {
-    NSArray * array = [NSArray arrayWithObjects:@"1",@"2",@"3",@"2",nil];
-    return @[array];
+    NSMutableArray *_ySumData = [[NSMutableArray alloc] init];
+    NSMutableArray *_yPriData = [[NSMutableArray alloc] init];
+    
+    for (int i = 0; i < [_data count]; ++i) {
+        [_ySumData addObject:[[_data objectAtIndex:i] objectForKey:@"sum"]];
+        [_yPriData addObject:[[_data objectAtIndex:i] objectForKey:@"primaryDevice"]];
+    }
+    return @[_ySumData,_yPriData];
 }
 
 - (BOOL)UUChart:(UUChart *)chart ShowHorizonLineAtIndex:(NSInteger)index
 {
     return YES;
+}
+
+- (NSArray *)UUChart_ColorArray:(UUChart *)chart
+{
+    return @[UUGreen,UURed];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -59,35 +77,57 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"chartCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView  dequeueReusableCellWithIdentifier:CellIdentifier
+                                                             forIndexPath:indexPath];
     
     if (cell == nil) {
         cell = [[UITableViewCell alloc]
-                initWithStyle:UITableViewCellStyleSubtitle
-                reuseIdentifier:CellIdentifier];
+                        initWithStyle:UITableViewCellStyleSubtitle
+                        reuseIdentifier:CellIdentifier];
     }
     
-    
-
     NSInteger section = [indexPath section];
     
+    CGRect chartFrame = CGRectMake(cell.bounds.origin.x, cell.bounds.origin.y,
+                                   cell.frame.size.width/1.1,cell.frame.size.height/1.1);
     if (section == 0) {
+        _chartLineView = [[UUChart alloc] initwithUUChartDataFrame:chartFrame
+                                                        withSource:self
+                                                         withStyle:UUChartLineStyle];
         [_chartLineView showInView:cell.contentView];
     } else {
+        _chartBarView = [[UUChart alloc] initwithUUChartDataFrame:chartFrame
+                                                       withSource:self
+                                                        withStyle:UUChartBarStyle];
         [_chartBarView showInView:cell.contentView];
     }
-    
     
     return cell;
 }
 
 - (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return  200;
+    CGRect screenFrame = [[UIScreen mainScreen] applicationFrame];
+    
+    return  screenFrame.size.height/2.8;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    if (section == 1) {
+        return 30.0f;
+    } else {
+        return UITableViewAutomaticDimension;
+    }
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    return section ? @"柱状图":@"折线图";
 }
 
 - (void)dealloc {
-    [_tableView release];
+    [pTableView release];
     [super dealloc];
 }
 @end

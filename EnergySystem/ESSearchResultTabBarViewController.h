@@ -8,6 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+#import "ESConstants.h"
+#import "ESSearchCondtionDataModel.h"
+#import "ESSearchResultViewController.h"
+#import "ESSearchResultChartViewController.h"
+
 @interface ESSearchResultTabBarViewController : UITabBarController
+
+@property (retain,nonatomic) ESSearchCondtionDataModel *scDataModel;
 
 @end

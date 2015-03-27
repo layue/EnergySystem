@@ -16,7 +16,7 @@
 {
     NSArray *_data;
 }
-@property (retain, nonatomic) IBOutlet UITableView *tableView;
+@property (retain, nonatomic) IBOutlet UITableView *pTableView;
 @property (retain, nonatomic) IBOutlet UITextField *provinceText;
 @property (retain, nonatomic) IBOutlet UITextField *cityText;
 @property (retain, nonatomic) IBOutlet UITextField *countyText;

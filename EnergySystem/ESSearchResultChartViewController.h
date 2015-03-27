@@ -11,7 +11,10 @@
 #import "UUChart.h"
 
 @interface ESSearchResultChartViewController : UIViewController <UUChartDataSource,UITableViewDataSource,UITableViewDelegate>
-@property (retain, nonatomic) IBOutlet UITableView *tableView;
+
+@property (retain, nonatomic) IBOutlet UITableView *pTableView;
+
+@property (strong,nonatomic) NSArray *data;
 
 @end
 

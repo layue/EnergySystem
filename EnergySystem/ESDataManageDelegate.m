@@ -249,7 +249,7 @@
     NSString *cfgFileContent = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
     NSLog(@"COMPLETED!");
     NSDictionary *resultData = [NSJSONSerialization JSONObjectWithData:[cfgFileContent dataUsingEncoding:NSUTF8StringEncoding] options:kNilOptions error:nil];
-    [self storeConfigInfoToDBDelegate:resultData];
+    //[self storeConfigInfoToDBDelegate:resultData];
 }
 
 

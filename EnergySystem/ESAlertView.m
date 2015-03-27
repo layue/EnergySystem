@@ -61,7 +61,7 @@
     return self;
 }
 
-- (id)initWithMessage:(CGRect)frame:(NSString *)message
+- (id)initWithMessage:(CGRect)frame :(NSString *)message
 {
     self = [super initWithFrame:frame];
     if (self) {

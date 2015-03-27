@@ -22,10 +22,7 @@
 }
 
 @property (nonatomic, strong) id <ESDataManageProtocal> delegate;
-@property (nonatomic) int firstTouchOnConfigButton;
 
-- (IBAction)changeFirstTouchOnConfigButton:(id)sender;
 - (IBAction)logout:(id)sender;
-- (void)getUserConfigInfo;
 
 @end

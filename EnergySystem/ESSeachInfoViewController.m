@@ -14,16 +14,16 @@
 
 @implementation ESSeachInfoViewController
 
-@synthesize tableView;
+@synthesize pTableView;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     //_data = [[NSArray alloc] initWithObjects:@"1",@"2",nil];
     
-    tableView.hidden = YES;
-    [tableView setDelegate:self];
-    [tableView setDataSource:self];
+    pTableView.hidden = YES;
+    [pTableView setDelegate:self];
+    [pTableView setDataSource:self];
     
 	// Do any additional setup after loading the view.
     
@@ -39,14 +39,12 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
     return [_data count];
 }
@@ -115,24 +113,24 @@
     
     if (sender == self.provinceBtn) {
         //省份为空，获取新的省级信息
-        tableView.frame = CGRectMake(self.provinceText.frame.origin.x, self.provinceText.frame.origin.y + self.provinceText.frame.size.height, 0.75*self.provinceText.frame.size.width, 4*self.provinceText.frame.size.height);
-        tableView.center = self.provinceText.center;
+        pTableView.frame = CGRectMake(self.provinceText.frame.origin.x, self.provinceText.frame.origin.y + self.provinceText.frame.size.height, 0.75*self.provinceText.frame.size.width, 4*self.provinceText.frame.size.height);
+        pTableView.center = self.provinceText.center;
         NSLog(@"provinceBtn");
     } else if (sender == self.cityBtn) {
         NSLog(@"cityBtn");
-        tableView.center = self.cityText.center;
+        pTableView.center = self.cityText.center;
         urlAsString = [urlAsString stringByAppendingString:@"&province="];
         urlAsString = [urlAsString stringByAppendingString:self.provinceText.text];
 
     } else if (sender == self.countyBtn) {
         NSLog(@"countyBtn");
-        tableView.center = self.countyText.center;
+        pTableView.center = self.countyText.center;
         urlAsString = [urlAsString stringByAppendingString:@"&province="];
         urlAsString = [urlAsString stringByAppendingString:self.provinceText.text];
         urlAsString = [urlAsString stringByAppendingString:@"&city="];
         urlAsString = [urlAsString stringByAppendingString:self.cityText.text];
     } else if (sender == self.buildingBtn) {
-        tableView.center = self.buildingText.center;
+        pTableView.center = self.buildingText.center;
         urlAsString = [urlAsString stringByAppendingString:@"&province="];
         urlAsString = [urlAsString stringByAppendingString:self.provinceText.text];
         urlAsString = [urlAsString stringByAppendingString:@"&city="];
@@ -142,7 +140,7 @@
         urlAsString = [urlAsString stringByAppendingString:@"&type="];
         urlAsString = [urlAsString stringByAppendingString:@"机楼"];
     } else if (sender == self.roomBtn) {
-        tableView.center = self.roomText.center;
+        pTableView.center = self.roomText.center;
         urlAsString = [urlAsString stringByAppendingString:@"&province="];
         urlAsString = [urlAsString stringByAppendingString:self.provinceText.text];
         urlAsString = [urlAsString stringByAppendingString:@"&city="];
@@ -178,32 +176,32 @@
         if ([status intValue] == 200) {
             _data = [resultData objectForKey:@"name"];
             [_data retain];
-            [tableView reloadData];
+            [pTableView reloadData];
         }
     }
     
-    tableView.hidden = NO;
+    pTableView.hidden = NO;
     
 }
 
 - (IBAction)getStaticConfigList:(id)sender
 {
     if (sender == self.kpiBtn) {
-        tableView.center = self.kpiText.center;
+        pTableView.center = self.kpiText.center;
         _data = [[NSArray alloc] initWithObjects:@"机房总耗电",@"机房空调耗电",@"机房照明耗电",@"机房主设备耗电",@"机房插座耗电",@"机房室内温度",@"机房室外温度",@"机房室内湿度",@"机房室外湿度", nil];
         [_data retain];
     } else if (sender == self.timeBtn) {
-        tableView.center = self.timeText.center;
+        pTableView.center = self.timeText.center;
         _data = [[NSArray alloc] initWithObjects:@"日",@"小时", nil];
         [_data retain];
     } else if (sender == self.orderBtn) {
-        tableView.center = self.orderText.center;
+        pTableView.center = self.orderText.center;
         _data = [[NSArray alloc] initWithObjects:@"升序",@"降序", nil];
         [_data retain];
     }
     
-    [tableView reloadData];
-    tableView.hidden = NO;
+    [pTableView reloadData];
+    pTableView.hidden = NO;
 }
 
 - (IBAction)saveSearchCondition:(id)sender
@@ -301,6 +299,7 @@
     [_kpiText release];
     [_timeText release];
     [_orderText release];
+    [pTableView release];
     [super dealloc];
 }
 @end

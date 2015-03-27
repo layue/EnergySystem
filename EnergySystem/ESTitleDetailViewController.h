@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 #import "ESSqliteUtil.h"
+#import "ESSearchResultTabBarViewController.h"
 #import "ESSearchResultViewController.h"
 
 @interface ESTitleDetailViewController : UIViewController <UITableViewDataSource,UITableViewDelegate>
@@ -17,7 +18,7 @@
     NSMutableArray *_data;
 }
 
-@property (retain, nonatomic) IBOutlet UITableView *tableView;
+@property (retain, nonatomic) IBOutlet UITableView *pTableView;
 @property (strong,nonatomic) NSString *name;
 
 @end

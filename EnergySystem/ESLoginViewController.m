@@ -165,7 +165,6 @@
             [self performSelectorOnMainThread:@selector(showAlertLoginError) withObject:nil waitUntilDone:FALSE];
         }
     } else if (connectionError != nil) {
-        NSLog(@"ERROR");
         //网络连接失败，请检查网络设置
         [self performSelectorOnMainThread:@selector(showHudMessage) withObject:nil waitUntilDone:YES];
     }
